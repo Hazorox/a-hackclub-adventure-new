@@ -24,6 +24,14 @@ DebuggingQuestions="*uid://dllop2di7nf5l"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+BoatPlayer=""
+
 [gui]
 
 common/auto_focus_strategy=1
