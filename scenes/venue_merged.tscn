@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dyq4dosoaidih" path="res://scenes/characters/npc/npc.tscn" id="9_a0263"]
 [ext_resource type="Script" uid="uid://700n2ixv46p7" path="res://scenes/caffeine_mode/dispenser.gd" id="9_kl8nc"]
 [ext_resource type="PackedScene" uid="uid://cuymkwx4rxacg" path="res://scenes/gather_rubbish/GarbageMode.tscn" id="10_ae56i"]
+[ext_resource type="Script" uid="uid://c0uhlh24gvfj0" path="res://scenes/deltarune_flowers/npc.gd" id="10_evnvw"]
 [ext_resource type="PackedScene" uid="uid://c4wvn1wxqow3q" path="res://scenes/characters/player/player.tscn" id="11_yuhmj"]
 [ext_resource type="PackedScene" uid="uid://bvomy02667opt" path="res://scenes/caffeine_mode/Caffeine Mode.tscn" id="12_qhtkb"]
 [ext_resource type="PackedScene" uid="uid://cujocc6edectd" path="res://scenes/cat/cat.tscn" id="14_2atwm"]
@@ -20,6 +21,7 @@
 [ext_resource type="Script" uid="uid://cga7v2rupt8vi" path="res://scenes/caffeine_mode/caffeine_mode.gd" id="16_5n8o0"]
 [ext_resource type="Script" uid="uid://bgrqlmxasa87k" path="res://scenes/venue/rhythm_mode.gd" id="16_qhtkb"]
 [ext_resource type="PackedScene" uid="uid://cwkuta35ityxj" path="res://scenes/ui/ui.tscn" id="18_codyl"]
+[ext_resource type="PackedScene" uid="uid://5jvo5evyjqkj" path="res://scenes/deltarune_flowers/deltarune_flowers.tscn" id="21_xd1d4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae56i"]
 texture = ExtResource("1_84xi6")
@@ -1437,7 +1439,7 @@ size = Vector2(5.5, 138)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhtkb"]
 size = Vector2(5.5, 81)
 
-[node name="Venue" type="Node2D" unique_id=305777334]
+[node name="venue_better" type="Node2D" unique_id=305777334]
 y_sort_enabled = true
 scale = Vector2(2, 2)
 
@@ -1483,6 +1485,13 @@ position = Vector2(51.5, 84)
 npc_number = 15
 on_interact = SubResource("GDScript_sy5xd")
 
+[node name="Flowery" parent="." unique_id=14356517 instance=ExtResource("9_a0263")]
+position = Vector2(603.5, 298.5)
+scale = Vector2(0.75, 0.75)
+npc_number = 18
+on_interact = ExtResource("10_evnvw")
+frame_size = Vector2i(26, 60)
+
 [node name="Anomar" parent="." unique_id=1575755990 instance=ExtResource("9_a0263")]
 position = Vector2(406.5, 301.5)
 npc_number = 17
@@ -1504,6 +1513,7 @@ target = NodePath("../Player")
 [node name="NavigationAgent2D2" type="NavigationAgent2D" parent="Cat" unique_id=2081964082]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1912044444]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_hyd08")
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1685014934]
@@ -1855,5 +1865,8 @@ script = ExtResource("15_hxsln")
 
 [node name="RhythmMode" type="Node2D" parent="." unique_id=1175701009]
 script = ExtResource("16_qhtkb")
+
+[node name="DeltaruneFlowers" parent="." unique_id=1430473623 node_paths=PackedStringArray("dialog") instance=ExtResource("21_xd1d4")]
+dialog = NodePath("../dialog")
 
 [node name="Ui" parent="." unique_id=579426520 instance=ExtResource("18_codyl")]
