@@ -40,8 +40,8 @@ func _process(_delta:float)->void:
 		once_near.new().run(self,player_in_range)
 		once_near_ran = true
 		return
-	
-	# Run interact if once_near is done and player pressed "interact"
+	if npc_number==20 and Globals.caffeine_done:
+		queue_free()
 	if Input.is_action_just_pressed("interact") and interactable and on_interact != null:
 		print("INTERACTED")
 		on_interact.new().run(self,player_in_range)

@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://dyq283ahcnrx" path="res://scenes/venue/debugging_mode.gd" id="15_hxsln"]
 [ext_resource type="Script" uid="uid://cga7v2rupt8vi" path="res://scenes/caffeine_mode/caffeine_mode.gd" id="16_5n8o0"]
 [ext_resource type="Script" uid="uid://bgrqlmxasa87k" path="res://scenes/venue/rhythm_mode.gd" id="16_qhtkb"]
-[ext_resource type="PackedScene" uid="uid://cbb4cib7n3fjn" path="res://scenes/ui/ui.tscn" id="18_codyl"]
+[ext_resource type="PackedScene" uid="uid://cwkuta35ityxj" path="res://scenes/ui/ui.tscn" id="18_codyl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae56i"]
 texture = ExtResource("1_84xi6")
@@ -1411,7 +1411,7 @@ size = Vector2(650, 24)
 size = Vector2(9, 377)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kaadr"]
-size = Vector2(16, 48)
+size = Vector2(27, 58.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0263"]
 size = Vector2(78.5, 22)
@@ -1440,8 +1440,6 @@ size = Vector2(5.5, 81)
 [node name="Venue" type="Node2D" unique_id=305777334]
 y_sort_enabled = true
 scale = Vector2(2, 2)
-
-[node name="CanvasLayer" parent="." unique_id=1600729092 instance=ExtResource("1_vkfqj")]
 
 [node name="Map" type="Node2D" parent="." unique_id=1968220234]
 
@@ -1492,7 +1490,7 @@ on_interact = SubResource("GDScript_hxsln")
 
 [node name="Chris_Caffeine" parent="." unique_id=1776127735 instance=ExtResource("9_a0263")]
 position = Vector2(23, 262.5)
-npc_number = 16
+npc_number = 20
 on_interact = SubResource("GDScript_qhtkb")
 
 [node name="Player" parent="." unique_id=1882750258 instance=ExtResource("11_yuhmj")]
@@ -1562,7 +1560,7 @@ collision_mask = 3
 script = ExtResource("9_kl8nc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/CaffeineDispenser" unique_id=1799000002]
-position = Vector2(-29, -325)
+position = Vector2(-29.5, -320)
 shape = SubResource("RectangleShape2D_kaadr")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Collisions" unique_id=1223807061]
@@ -1843,11 +1841,14 @@ collision_mask = 3
 position = Vector2(-460, -241)
 shape = SubResource("RectangleShape2D_qhtkb")
 
-[node name="GarbageMode" parent="." unique_id=1061071523 instance=ExtResource("10_ae56i")]
+[node name="dialog" parent="." unique_id=1600729092 instance=ExtResource("1_vkfqj")]
+
+[node name="GarbageMode" parent="." unique_id=1061071523 node_paths=PackedStringArray("dialog") instance=ExtResource("10_ae56i")]
+dialog = NodePath("../dialog")
 
 [node name="CaffeineMode" parent="." unique_id=1799000003 node_paths=PackedStringArray("dialog") instance=ExtResource("12_qhtkb")]
 script = ExtResource("16_5n8o0")
-dialog = NodePath("../CanvasLayer")
+dialog = NodePath("../dialog")
 
 [node name="DebuggingMode" type="Node2D" parent="." unique_id=1494169214]
 script = ExtResource("15_hxsln")
