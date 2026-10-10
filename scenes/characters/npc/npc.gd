@@ -12,7 +12,7 @@ extends CharacterBody2D
 @onready var interaction_area:Area2D = $interaction
 
 # Sprite Sheet constants
-const frame_size = Vector2i(16,20)
+@export var frame_size:Vector2i = Vector2i(16,20)
 const animations := ["down","left","right","up"]
 const sheet_name := "character_%s_frame16x20.png"
 const NPC_FOLDER := "res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_"
