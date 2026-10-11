@@ -7,9 +7,6 @@
 [ext_resource type="Script" uid="uid://ckyj0sit7ueji" path="res://scenes/deltarune_flowers/red_soul.gd" id="3_mw0xd"]
 [ext_resource type="Texture2D" uid="uid://cwikkkytc6bh2" path="res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_18/Flowery.png" id="5_0hpqs"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
-radius = 33.35998
-
 [sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
 font = ExtResource("3_1qyc7")
 font_size = 32
@@ -17,6 +14,9 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
 font = ExtResource("3_1qyc7")
 font_size = 32
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 33.35998
 
 [sub_resource type="GDScript" id="GDScript_0hpqs"]
 script/source = "extends Area2D
@@ -36,33 +36,8 @@ radius = 119.0042
 
 [node name="DeltaruneScene" type="Node2D" unique_id=1317907814]
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=922266263 groups=["heart_player"]]
-light_mask = 3
-visibility_layer = 3
-z_index = 999
-position = Vector2(120, 422)
-script = ExtResource("3_mw0xd")
-
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=1232283702]
-zoom = Vector2(1.4, 1.4)
-limit_left = 0
-limit_top = 0
-limit_right = 2560
-limit_bottom = 720
-limit_smoothed = true
-
-[node name="dialog" parent="player/Camera2D" unique_id=1600729092 instance=ExtResource("2_xurc2")]
-
-[node name="Sprite2D" type="Sprite2D" parent="player" unique_id=427181905]
-scale = Vector2(3, 3)
-texture = ExtResource("2_mw0xd")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=735593351]
-position = Vector2(-1.3333334, -4)
-shape = SubResource("CircleShape2D_nfrx5")
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=221881943]
-layer = -1
+layer = 50
 follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=479697627]
@@ -184,9 +159,35 @@ horizontal_alignment = 2
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="player" type="CharacterBody2D" parent="CanvasLayer" unique_id=922266263 groups=["heart_player"]]
+light_mask = 3
+visibility_layer = 3
+z_index = 999
+position = Vector2(120, 422)
+script = ExtResource("3_mw0xd")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/player" unique_id=1232283702]
+zoom = Vector2(1.4, 1.4)
+limit_left = 0
+limit_top = 0
+limit_right = 2560
+limit_bottom = 720
+limit_smoothed = true
+
+[node name="dialog" parent="CanvasLayer/player/Camera2D" unique_id=1600729092 instance=ExtResource("2_xurc2")]
+layer = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/player" unique_id=427181905]
+scale = Vector2(3, 3)
+texture = ExtResource("2_mw0xd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/player" unique_id=735593351]
+position = Vector2(-1.3333334, -4)
+shape = SubResource("CircleShape2D_nfrx5")
+
 [node name="flowery" type="Area2D" parent="." unique_id=784273814 node_paths=PackedStringArray("dialog")]
 script = SubResource("GDScript_0hpqs")
-dialog = NodePath("../player/Camera2D/dialog")
+dialog = NodePath("../CanvasLayer/player/Camera2D/dialog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="flowery" unique_id=702439263]
 position = Vector2(2480, 321)

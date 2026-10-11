@@ -10,7 +10,7 @@ var finished := false
 func start(_player:CharacterBody2D)->void:
 	dialog.queue_text("Don't worry MY DEAR FRIEND !!!",sprite_path,npc_name,audio_path)
 	dialog.queue_text("Im Flowery, I am your friend, and you must accept it",sprite_path,npc_name,audio_path)
-	await get_tree().create_timer(4.67).timeout
+	await dialog.finished
 	if layer != null or finished:
 		return
 	layer = CanvasLayer.new()
