@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://5jvo5evyjqkj"]
+
+[ext_resource type="Script" uid="uid://cg02ewpvreb2u" path="res://scenes/deltarune_flowers/deltarune_flowers.gd" id="1_1lun0"]
+
+[node name="DeltaruneFlowers" type="Node2D" unique_id=1430473623]
+script = ExtResource("1_1lun0")

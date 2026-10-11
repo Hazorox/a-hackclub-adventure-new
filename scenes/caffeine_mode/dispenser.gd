@@ -8,3 +8,4 @@ func player_entered(body:Node2D)->void:
 		Globals.caffeine_on=false
 		Globals.caffeine_in_time=false
 		Globals.friends+=1
+		Globals.caffeine_done=true
