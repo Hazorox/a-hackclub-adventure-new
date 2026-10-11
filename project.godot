@@ -18,11 +18,20 @@ config/icon="res://icon.svg"
 
 Globals="*uid://boj1de3u456do"
 DebuggingQuestions="*uid://dllop2di7nf5l"
+BetterTerrain="*uid://dx3fwj5y8pvnq"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/better-tile-editor/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+navigation_polygon_source_geometry_group=""
 
 [gui]
 
