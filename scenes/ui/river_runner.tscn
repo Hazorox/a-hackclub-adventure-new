@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://cfqpyly16u4iu"]
+
+[ext_resource type="Texture2D" uid="uid://71jc5ct015g4" path="res://assets/River-Runner/cloudy sky png/night.png" id="1_jkq8y"]
+[ext_resource type="FontFile" uid="uid://dr71bdummbda3" path="res://assets/fonts/kenney_kenney-fonts/Fonts/Kenney Future Narrow.ttf" id="2_7k1ld"]
+[ext_resource type="Texture2D" uid="uid://hnddsfsp666l" path="res://assets/icons/download (2).png" id="3_fq4h4"]
+[ext_resource type="Texture2D" uid="uid://cn7kuxxhwgk8a" path="res://assets/icons/favicon.png" id="4_gm4wn"]
+[ext_resource type="Texture2D" uid="uid://d3hajkp2mvmob" path="res://assets/icons/download.png" id="5_fq4h4"]
+[ext_resource type="FontFile" uid="uid://bwcrk3renk7rx" path="res://assets/fonts/kenney_kenney-fonts/Fonts/Kenney Future.ttf" id="5_qd6k4"]
+[ext_resource type="Texture2D" uid="uid://d1ldyemjrpwsn" path="res://assets/icons/asset2.png" id="6_gm4wn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ad8vj"]
+bg_color = Color(0.7921569, 0.7490196, 0.6431373, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.434867, 6.435082e-05, 0.39539033, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkq8y"]
+bg_color = Color(0, 0.8666668, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.7833333, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kaadr"]
+bg_color = Color(0.7411765, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.46829242, 0.6014487, 0.9999985, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="RiverRunner" type="CanvasLayer" unique_id=470240211]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=948247254]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jkq8y")
+
+[node name="Title" type="Label" parent="." unique_id=251948037]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -167.0
+offset_right = 167.0
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_7k1ld")
+theme_override_font_sizes/font_size = 48
+text = "You've sank :("
+horizontal_alignment = 1
+
+[node name="Textures" type="Control" parent="." unique_id=1182380242]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Textures" unique_id=895531980]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 544.0
+offset_right = 751.6
+offset_bottom = 647.6
+texture = ExtResource("3_fq4h4")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Textures" unique_id=805578275]
+layout_mode = 0
+offset_left = 986.0
+offset_top = 212.0
+offset_right = 1082.5
+offset_bottom = 332.0
+texture = ExtResource("4_gm4wn")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Textures" unique_id=1179215817]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 47.0
+offset_right = 330.5
+offset_bottom = 167.0
+texture = ExtResource("4_gm4wn")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Textures" unique_id=1283807903]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 114.0
+offset_right = 876.5
+offset_bottom = 234.0
+texture = ExtResource("5_fq4h4")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="Textures" unique_id=2089187026]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 502.0
+offset_right = 241.5
+offset_bottom = 622.0
+texture = ExtResource("6_gm4wn")
+expand_mode = 1
+
+[node name="Buttons" type="Control" parent="." unique_id=1545097236]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RestartButton" type="Button" parent="Buttons" unique_id=316862437]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 126.0
+offset_right = 200.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.47067457, 8.278489e-05, 0.43319467, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.85, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.9490196, 0.7176471, 1)
+theme_override_fonts/font = ExtResource("5_qd6k4")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ad8vj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jkq8y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kaadr")
+text = "Restart"
+
+[node name="ExitButton" type="Button" parent="Buttons" unique_id=275372766]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 26.0
+offset_right = 200.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.47067457, 8.278489e-05, 0.43319467, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.85, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.9490196, 0.7176471, 1)
+theme_override_fonts/font = ExtResource("5_qd6k4")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_ad8vj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jkq8y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kaadr")
+text = "Exit"
