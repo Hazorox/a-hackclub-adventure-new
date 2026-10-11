@@ -1,7 +1,8 @@
 extends Node
 
+# Variables
 var rhythem_score : int = 0
-
+var player:CharacterBody2D = null
 var objective := {"title":"first_talk","description":"Strike up a talk with someone"}
 var _timer:Timer
 var rubbish_in_hand :=false
@@ -13,6 +14,7 @@ var caffeine_time =25
 var caffeine_in_time :=false
 var caffeine_done:=false
 var flowery_done :=false
+var detector_on :=false
 func _ready()->void:
 	_timer = Timer.new()
 	_timer.wait_time = 0.5
@@ -21,7 +23,8 @@ func _ready()->void:
 	add_child(_timer)
 
 func _process(_delta:float)->void:
-	print(flowery_done)
+	if player==null:
+		player = get_tree().get_first_node_in_group("player")
 	if rubbish_score==10:
 		garbage_mode_on=false
 

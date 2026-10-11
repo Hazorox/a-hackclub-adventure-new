@@ -4,12 +4,12 @@ extends Node2D
 const sprite_path = "res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_18/Flowery.png"
 const npc_name = "Flowery"
 const audio_path = "res://assets/audio/flowery.wav"
-
 # Get dialog node
 @onready var dialog = get_parent().get_node("dialog")
 # Override main scene using layer and finished vars
 var layer:CanvasLayer = null
 var finished := false
+var to_run = true
 
 # Get the scene to override with
 @export var exported_scene : PackedScene
@@ -43,7 +43,11 @@ func start()->void:
 
 func _process(_delta:float):
 	# If the gamemode ends, get Flowery Node and remove
-	if Globals.flowery_done:
+	if Globals.flowery_done and to_run:
 		var flowery = get_parent().get_node("Flowery")
 		if flowery:
 			flowery.queue_free()
+			Globals.friends+=1
+			Globals.objective.title="wander"
+			Globals.objective.description = "Wander Around !!"
+			to_run = false

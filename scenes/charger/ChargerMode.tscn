@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://l3ur1eggbcoc"]
+
+[ext_resource type="Script" uid="uid://61vrt0xm4w8n" path="res://scenes/charger/charger_mode.gd" id="1_gi0in"]
+
+[node name="ChargerMode" type="Node2D" unique_id=1209609974]
+script = ExtResource("1_gi0in")
