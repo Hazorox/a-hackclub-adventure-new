@@ -29,6 +29,7 @@ func _process(delta: float) -> void:
 	if can_light and not is_lit and player_in_range and Input.is_action_just_pressed("interact"):
 		is_lit = true
 		animated_sprite_2d.play("lit")
+		Globals.friends += 1
 
 func start():
 	print(self, " path: ", get_path(), " dialog: ", dialog)
