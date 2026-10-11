@@ -28,6 +28,16 @@
 [ext_resource type="Script" uid="uid://cg02ewpvreb2u" path="res://scenes/deltarune_flowers/deltarune_flowers.gd" id="23_vwcaf"]
 [ext_resource type="PackedScene" uid="uid://cwqjn1q0iosdj" path="res://scenes/deltarune_flowers/deltarune_scene.tscn" id="24_f3ivs"]
 [ext_resource type="PackedScene" uid="uid://b4rrbx3u0hm6r" path="res://scenes/lit_campfire/lit_campfire.tscn" id="26_f3ivs"]
+[ext_resource type="Texture2D" uid="uid://keddu6y312et" path="res://assets/free-office-pixel-art/beanbags/beanbag1.png" id="29_0x67c"]
+[ext_resource type="Texture2D" uid="uid://bmdur88h6rqvv" path="res://assets/free-office-pixel-art/beanbags/beanbag2.png" id="30_dgnym"]
+[ext_resource type="Texture2D" uid="uid://bvyrk6dhmtau7" path="res://assets/free-office-pixel-art/beanbags/beanbag3.png" id="31_iiwx3"]
+[ext_resource type="Texture2D" uid="uid://dwsjxex43n7eq" path="res://assets/free-office-pixel-art/beanbags/beanbag4.png" id="32_gsias"]
+[ext_resource type="Texture2D" uid="uid://cxxutc6iu1auk" path="res://assets/free-office-pixel-art/beanbags/beanbag5.png" id="33_6o1fr"]
+[ext_resource type="Texture2D" uid="uid://qxk3jtxkgql4" path="res://assets/free-office-pixel-art/beanbags/beanbag6.png" id="34_dh5br"]
+[ext_resource type="Texture2D" uid="uid://c5va7csvlesmj" path="res://assets/free-office-pixel-art/beanbags/beanbag7.png" id="35_vjksx"]
+[ext_resource type="Texture2D" uid="uid://cuv4m5tedpr7a" path="res://assets/free-office-pixel-art/beanbags/beanbag8.png" id="36_kusfh"]
+[ext_resource type="Texture2D" uid="uid://f8skau6xm7l6" path="res://assets/free-office-pixel-art/beanbags/beanbag9.png" id="37_1qomx"]
+[ext_resource type="Texture2D" uid="uid://bmdkcuy6dkb8a" path="res://assets/free-office-pixel-art/beanbags/beanbag10.png" id="38_nf1a0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3ivs"]
 texture = ExtResource("2_5pec1")
@@ -4985,3 +4995,60 @@ script = ExtResource("16_qhtkb")
 [node name="LitCampfire" parent="." unique_id=1153259599 node_paths=PackedStringArray("dialog") instance=ExtResource("26_f3ivs")]
 position = Vector2(1064.5, 294.5)
 dialog = NodePath("../dialog")
+
+[node name="beanbags" type="Node2D" parent="." unique_id=386866683]
+position = Vector2(1064.5, 294.5)
+
+[node name="Beanbag1" type="Sprite2D" parent="beanbags" unique_id=880403845]
+position = Vector2(-550.5, -146.5)
+scale = Vector2(0.5546875, 0.5546875)
+texture = ExtResource("29_0x67c")
+
+[node name="Beanbag2" type="Sprite2D" parent="beanbags" unique_id=43902468]
+position = Vector2(-572.00006, -108.49999)
+scale = Vector2(0.515625, 0.515625)
+texture = ExtResource("30_dgnym")
+
+[node name="Beanbag3" type="Sprite2D" parent="beanbags" unique_id=1832190893]
+position = Vector2(-570, -72.5)
+scale = Vector2(0.5546875, 0.5546875)
+texture = ExtResource("31_iiwx3")
+
+[node name="Beanbag4" type="Sprite2D" parent="beanbags" unique_id=78864095]
+position = Vector2(-572.5, -14.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("32_gsias")
+
+[node name="Beanbag5" type="Sprite2D" parent="beanbags" unique_id=604585328]
+position = Vector2(-540.5, 28)
+scale = Vector2(0.578125, 0.578125)
+texture = ExtResource("33_6o1fr")
+
+[node name="Beanbag6" type="Sprite2D" parent="beanbags" unique_id=228630968]
+position = Vector2(-445, -48)
+scale = Vector2(0.5546875, 0.5546875)
+texture = ExtResource("34_dh5br")
+flip_h = true
+
+[node name="Beanbag7" type="Sprite2D" parent="beanbags" unique_id=814353194]
+position = Vector2(-449, -143)
+scale = Vector2(0.65625, 0.65625)
+texture = ExtResource("35_vjksx")
+flip_h = true
+
+[node name="Beanbag8" type="Sprite2D" parent="beanbags" unique_id=1635468962]
+position = Vector2(-541, -43)
+scale = Vector2(0.5234375, 0.5234375)
+texture = ExtResource("36_kusfh")
+
+[node name="Beanbag9" type="Sprite2D" parent="beanbags" unique_id=1458567143]
+position = Vector2(-500, -10.5)
+scale = Vector2(0.609375, 0.609375)
+texture = ExtResource("37_1qomx")
+flip_h = true
+
+[node name="Beanbag10" type="Sprite2D" parent="beanbags" unique_id=2065625032]
+position = Vector2(-499, -151.5)
+scale = Vector2(0.609375, 0.609375)
+texture = ExtResource("38_nf1a0")
+flip_h = true
