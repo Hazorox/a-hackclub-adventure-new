@@ -1,0 +1,211 @@
+[gd_scene format=3 uid="uid://cwqjn1q0iosdj"]
+
+[ext_resource type="Script" uid="uid://nuaq4sklrm14" path="res://scenes/deltarune_flowers/spawn_heart.gd" id="1_x3q3r"]
+[ext_resource type="Texture2D" uid="uid://chcc3ycwimdnu" path="res://assets/heart.png" id="2_mw0xd"]
+[ext_resource type="PackedScene" uid="uid://did26kwowqjgl" path="res://scenes/dialog/canvas_layer.tscn" id="2_xurc2"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="3_1qyc7"]
+[ext_resource type="Script" uid="uid://ckyj0sit7ueji" path="res://scenes/deltarune_flowers/red_soul.gd" id="3_mw0xd"]
+[ext_resource type="Texture2D" uid="uid://cwikkkytc6bh2" path="res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_18/Flowery.png" id="5_0hpqs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
+font = ExtResource("3_1qyc7")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
+font = ExtResource("3_1qyc7")
+font_size = 32
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 33.35998
+
+[sub_resource type="GDScript" id="GDScript_0hpqs"]
+script/source = "extends Area2D
+const sprite_path = \"res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_18/Flowery.png\"
+const npc_name = \"Flowery\"
+const audio_path = \"res://assets/audio/flowery.wav\"
+@export var dialog:Node
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"heart_player\"):
+		dialog.queue_text(\"And you're the red soul... DETERMINATION\",sprite_path,npc_name,audio_path)
+		await dialog.finished
+		Globals.flowery_done = true
+		print(\"SET FLOWER_DONE TO TRUEEE\")
+		get_parent().get_parent().queue_free()
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hvcy"]
+radius = 119.0042
+
+[node name="DeltaruneScene" type="Node2D" unique_id=1317907814]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=221881943]
+layer = 50
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=479697627]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VSplitContainer" type="VSplitContainer" parent="CanvasLayer" unique_id=889922998]
+offset_left = 255.0
+offset_top = 149.0
+offset_right = 1656.0
+offset_bottom = 228.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VSplitContainer" unique_id=463584913]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.1, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/VSplitContainer/HBoxContainer2" unique_id=2141486469]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BRAVERY"
+label_settings = SubResource("LabelSettings_nfrx5")
+
+[node name="Label2" type="Label" parent="CanvasLayer/VSplitContainer/HBoxContainer2" unique_id=1578989666]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "KINDNESS"
+label_settings = SubResource("LabelSettings_nfrx5")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/VSplitContainer/HBoxContainer2" unique_id=867925895]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(40, 0)
+text = "INTEGRITY"
+label_settings = SubResource("LabelSettings_nfrx5")
+horizontal_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VSplitContainer" unique_id=1219722152]
+layout_mode = 2
+theme_override_constants/separation = 600
+alignment = 1
+
+[node name="0" type="TextureRect" parent="CanvasLayer/VSplitContainer/HBoxContainer" unique_id=997123467]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_mw0xd")
+script = ExtResource("1_x3q3r")
+
+[node name="2" type="TextureRect" parent="CanvasLayer/VSplitContainer/HBoxContainer" unique_id=1625335303]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_mw0xd")
+script = ExtResource("1_x3q3r")
+
+[node name="4" type="TextureRect" parent="CanvasLayer/VSplitContainer/HBoxContainer" unique_id=1071651772]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("2_mw0xd")
+script = ExtResource("1_x3q3r")
+
+[node name="VSplitContainer2" type="VSplitContainer" parent="CanvasLayer" unique_id=1997205999]
+offset_left = 554.0
+offset_top = 520.0
+offset_right = 1955.0
+offset_bottom = 599.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VSplitContainer2" unique_id=1625518607]
+layout_mode = 2
+theme_override_constants/separation = 600
+
+[node name="1" type="TextureRect" parent="CanvasLayer/VSplitContainer2/HBoxContainer2" unique_id=494481630]
+layout_mode = 2
+texture = ExtResource("2_mw0xd")
+script = ExtResource("1_x3q3r")
+
+[node name="3" type="TextureRect" parent="CanvasLayer/VSplitContainer2/HBoxContainer2" unique_id=1902925769]
+layout_mode = 2
+script = ExtResource("1_x3q3r")
+
+[node name="5" type="TextureRect" parent="CanvasLayer/VSplitContainer2/HBoxContainer2" unique_id=441657139]
+layout_mode = 2
+script = ExtResource("1_x3q3r")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VSplitContainer2" unique_id=73578535]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(1.12, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/VSplitContainer2/HBoxContainer" unique_id=1955543479]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "JUSTICE"
+label_settings = SubResource("LabelSettings_0hvcy")
+
+[node name="Label2" type="Label" parent="CanvasLayer/VSplitContainer2/HBoxContainer" unique_id=1861406568]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PATIENCE"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/VSplitContainer2/HBoxContainer" unique_id=119226928]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(80, 0)
+text = "PRESERVANCE"
+label_settings = SubResource("LabelSettings_0hvcy")
+horizontal_alignment = 2
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1748049783]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="player" type="CharacterBody2D" parent="CanvasLayer" unique_id=922266263 groups=["heart_player"]]
+light_mask = 3
+visibility_layer = 3
+z_index = 999
+position = Vector2(120, 422)
+script = ExtResource("3_mw0xd")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/player" unique_id=1232283702]
+zoom = Vector2(1.4, 1.4)
+limit_left = 0
+limit_top = 0
+limit_right = 2560
+limit_bottom = 720
+limit_smoothed = true
+
+[node name="dialog" parent="CanvasLayer/player/Camera2D" unique_id=1600729092 instance=ExtResource("2_xurc2")]
+layer = 60
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/player" unique_id=427181905]
+scale = Vector2(3, 3)
+texture = ExtResource("2_mw0xd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/player" unique_id=735593351]
+position = Vector2(-1.3333334, -4)
+shape = SubResource("CircleShape2D_nfrx5")
+
+[node name="flowery" type="Area2D" parent="CanvasLayer" unique_id=784273814 node_paths=PackedStringArray("dialog")]
+script = SubResource("GDScript_0hpqs")
+dialog = NodePath("../player/Camera2D/dialog")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/flowery" unique_id=702439263]
+position = Vector2(2480, 321)
+shape = SubResource("CircleShape2D_0hvcy")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/flowery" unique_id=2137724283]
+position = Vector2(2494, 318)
+scale = Vector2(4, 4)
+texture = ExtResource("5_0hpqs")
+
+[node name="borders" type="StaticBody2D" parent="." unique_id=1619168763]
+collision_layer = 7
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="borders" unique_id=419249966]
+build_mode = 1
+polygon = PackedVector2Array(0, 2, 0, 721, 2560, 721, 2560, 1)
+
+[connection signal="body_entered" from="CanvasLayer/flowery" to="CanvasLayer/flowery" method="_on_body_entered"]

@@ -30,16 +30,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var var_speed = randi_range(500, 750)
 	position += Vector2(0, var_speed) * delta
-	if in_down_area and Input.is_action_just_pressed("down_arrow"):
+	if in_down_area and Input.is_action_just_pressed("down"):
 		queue_free()
 		Globals.rhythem_score += 1
-	elif in_up_area and Input.is_action_just_pressed("up_arrow"):
+	elif in_up_area and Input.is_action_just_pressed("up"):
 		queue_free()
 		Globals.rhythem_score += 1
-	elif in_right_area and Input.is_action_just_pressed("right_arrow"):
+	elif in_right_area and Input.is_action_just_pressed("right"):
 		queue_free()
 		Globals.rhythem_score += 1
-	elif in_left_area and Input.is_action_just_pressed("left_arrow"):
+	elif in_left_area and Input.is_action_just_pressed("left"):
 		queue_free()
 		Globals.rhythem_score += 1
 

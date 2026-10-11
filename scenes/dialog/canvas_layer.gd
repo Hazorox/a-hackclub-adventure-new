@@ -7,7 +7,7 @@ extends CanvasLayer
 @onready var cont: Panel = $MarginContainer/Panel
 @onready var label: Label = $name
 @onready var sprite2d: Sprite2D = $MarginContainer/MarginContainer/HBoxContainer/MarginContainer/Sprite2D
-
+signal finished
 var queue: Array = []
 var choices: Array = []
 var callback: Callable
@@ -58,6 +58,8 @@ func _process(delta: float) -> void:
 			if Input.is_action_just_pressed("ui_accept"):
 				hide_box()
 				change_state(STATE.READY)
+				if queue.is_empty():
+					finished.emit()
 
 func hide_box():
 	cont.hide()
