@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bc385rx85pysa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onkbk"]
+radius = 100.0
+
+[node name="ShowerArea" type="Area2D" unique_id=1376619805]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=775895703]
+shape = SubResource("CircleShape2D_onkbk")
