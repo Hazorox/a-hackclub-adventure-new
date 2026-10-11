@@ -1411,6 +1411,15 @@ func run(npc:CharacterBody2D,player:CharacterBody2D)->void:
 		mode.start()
 "
 
+[sub_resource type="GDScript" id="GDScript_36q3d"]
+script/source = "extends RefCounted
+
+func run(npc:CharacterBody2D,_player:CharacterBody2D):
+	var mode = npc.get_parent().get_node(\"Typerace\")
+	if mode:
+		mode.start()
+"
+
 [sub_resource type="GDScript" id="GDScript_5pec1"]
 script/source = "extends RefCounted
 
@@ -1531,6 +1540,11 @@ on_interact = SubResource("GDScript_hxsln")
 position = Vector2(23, 262.5)
 npc_number = 20
 on_interact = SubResource("GDScript_qhtkb")
+
+[node name="Stacy" parent="." unique_id=199651751 instance=ExtResource("9_a0263")]
+position = Vector2(118.5, 170)
+npc_number = 30
+on_interact = SubResource("GDScript_36q3d")
 
 [node name="Steve" parent="." unique_id=778384211 instance=ExtResource("9_a0263")]
 position = Vector2(267.5, 37)
