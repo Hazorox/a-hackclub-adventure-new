@@ -21,7 +21,8 @@
 [ext_resource type="Script" uid="uid://cga7v2rupt8vi" path="res://scenes/caffeine_mode/caffeine_mode.gd" id="16_5n8o0"]
 [ext_resource type="Script" uid="uid://bgrqlmxasa87k" path="res://scenes/venue/rhythm_mode.gd" id="16_qhtkb"]
 [ext_resource type="PackedScene" uid="uid://cwkuta35ityxj" path="res://scenes/ui/ui.tscn" id="18_codyl"]
-[ext_resource type="PackedScene" uid="uid://5jvo5evyjqkj" path="res://scenes/deltarune_flowers/deltarune_flowers.tscn" id="21_xd1d4"]
+[ext_resource type="PackedScene" uid="uid://5jvo5evyjqkj" path="res://scenes/deltarune_flowers/flowers_starter.tscn" id="21_xd1d4"]
+[ext_resource type="PackedScene" uid="uid://cwqjn1q0iosdj" path="res://scenes/deltarune_flowers/deltarune_scene.tscn" id="22_5pec1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae56i"]
 texture = ExtResource("1_84xi6")
@@ -1868,5 +1869,6 @@ script = ExtResource("16_qhtkb")
 
 [node name="DeltaruneFlowers" parent="." unique_id=1430473623 node_paths=PackedStringArray("dialog") instance=ExtResource("21_xd1d4")]
 dialog = NodePath("../dialog")
+exported_scene = ExtResource("22_5pec1")
 
 [node name="Ui" parent="." unique_id=579426520 instance=ExtResource("18_codyl")]
