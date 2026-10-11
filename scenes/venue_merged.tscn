@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cbb4cib7n3fjn" path="res://scenes/ui/ui.tscn" id="18_codyl"]
 [ext_resource type="PackedScene" uid="uid://5jvo5evyjqkj" path="res://scenes/deltarune_flowers/flowers_starter.tscn" id="21_xd1d4"]
 [ext_resource type="PackedScene" uid="uid://cwqjn1q0iosdj" path="res://scenes/deltarune_flowers/deltarune_scene.tscn" id="22_5pec1"]
+[ext_resource type="Script" uid="uid://csbiykiymphsb" path="res://scenes/tissue_boxes.gd" id="22_bnncy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae56i"]
 texture = ExtResource("1_84xi6")
@@ -1880,7 +1881,16 @@ script = ExtResource("16_qhtkb")
 [node name="DeltaruneFlowers" parent="." unique_id=1430473623 instance=ExtResource("21_xd1d4")]
 exported_scene = ExtResource("22_5pec1")
 
+[node name="TissueBoxes" type="Node2D" parent="." unique_id=670883291]
+script = ExtResource("22_bnncy")
+
+[node name="Spawning Timer" type="Timer" parent="TissueBoxes" unique_id=431179824]
+wait_time = 45.0
+autostart = true
+
 [node name="Ui" parent="." unique_id=579426520 instance=ExtResource("18_codyl")]
+
+[connection signal="timeout" from="TissueBoxes/Spawning Timer" to="TissueBoxes" method="_on_spawning_timer_timeout"]
 
 [editable path="Ui"]
 [editable path="Ui/FilthinessBar"]

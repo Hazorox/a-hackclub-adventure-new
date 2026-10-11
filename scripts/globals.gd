@@ -12,6 +12,7 @@ var caffeine_time =25
 var caffeine_in_time :=false
 var caffeine_done:=false
 var flowery_done :=false
+var tissue_boxes_owned := 0
 
 func _ready()->void:
 	_timer = Timer.new()
