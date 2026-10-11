@@ -14,6 +14,7 @@ var caffeine_time =25
 var caffeine_in_time :=false
 var caffeine_done:=false
 var flowery_done :=false
+var detector_on :=false
 func _ready()->void:
 	_timer = Timer.new()
 	_timer.wait_time = 0.5
