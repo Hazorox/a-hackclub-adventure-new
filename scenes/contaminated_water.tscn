@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bjb2k78r45h7r"]
+
+[ext_resource type="Script" uid="uid://1omx5ka0mo65" path="res://scenes/contaminated_water.gd" id="1_lrsdi"]
+[ext_resource type="Texture2D" uid="uid://dcj53u32nbtff" path="res://assets/YouShouldShower/WaterDrops.png" id="1_vdt67"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onkbk"]
+radius = 4.0
+height = 12.0
+
+[node name="ContaminatedWater" type="Area2D" unique_id=1712875912 groups=["contaminated"]]
+scale = Vector2(3, 3)
+script = ExtResource("1_lrsdi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1497801323]
+texture = ExtResource("1_vdt67")
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1024762813]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_onkbk")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -37,6 +37,8 @@ BoatPlayer=""
 obstacles_delete=""
 Obstacle=""
 heart_player=""
+pure=""
+contaminated=""
 
 [gui]
 
