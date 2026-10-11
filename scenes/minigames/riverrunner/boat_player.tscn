@@ -4,13 +4,135 @@
 [ext_resource type="Texture2D" uid="uid://cdnn7tmdvvc4q" path="res://assets/River-Runner/boat.png" id="1_gxiog"]
 [ext_resource type="Script" uid="uid://bgn8m88afdpkk" path="res://scenes/minigames/riverrunner/collosion_detection_area.gd" id="3_k7xqs"]
 
+[sub_resource type="Animation" id="Animation_k7xqs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7853982]
+}
+
+[sub_resource type="Animation" id="Animation_bji3u"]
+resource_name = "boat_heading_left"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.7853982]
+}
+
+[sub_resource type="Animation" id="Animation_sc20x"]
+resource_name = "boat_heading_right"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7853982]
+}
+
+[sub_resource type="Animation" id="Animation_5xiys"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bji3u"]
+_data = {
+&"RESET": SubResource("Animation_k7xqs"),
+&"boat_heading_left": SubResource("Animation_bji3u"),
+&"boat_heading_right": SubResource("Animation_sc20x"),
+&"idle": SubResource("Animation_5xiys")
+}
+
 [node name="BoatPlayer" type="CharacterBody2D" unique_id=28851345 groups=["player"]]
 collision_layer = 32768
 collision_mask = 32768
 script = ExtResource("1_33qfu")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2109251088]
-texture = ExtResource("1_gxiog")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=528310105]
 visible = false
@@ -26,5 +148,13 @@ script = ExtResource("3_k7xqs")
 [node name="CollisionDetection" type="CollisionPolygon2D" parent="CollosionDetectionArea" unique_id=2121497930]
 position = Vector2(0, 20)
 polygon = PackedVector2Array(-2, -42, 2, -42, 2, -41, 5, -41, 5, -40, 6, -40, 6, -39, 7, -39, 7, -38, 8, -38, 8, -37, 10, -37, 10, -36, 11, -36, 11, -35, 12, -35, 12, -34, 13, -34, 13, -33, 14, -33, 14, -32, 15, -32, 15, -30, 16, -30, 16, -28, 17, -28, 17, 9, 16, 9, 16, 10, 15, 10, 15, 11, 5, 11, -15, 11, -15, 10, -16, 10, -16, 9, -17, 9, -17, -28, -16, -28, -16, -30, -15, -30, -15, -32, -14, -32, -14, -33, -13, -33, -13, -34, -12, -34, -12, -35, -11, -35, -11, -36, -10, -36, -10, -37, -8, -37, -8, -38, -7, -38, -7, -39, -6, -39, -6, -40, -5, -40, -5, -41, -2, -41)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=999575558]
+libraries/ = SubResource("AnimationLibrary_bji3u")
+autoplay = &"idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=975370890]
+rotation = 0.7853982
+texture = ExtResource("1_gxiog")
 
 [connection signal="area_entered" from="CollosionDetectionArea" to="CollosionDetectionArea" method="_on_area_entered"]

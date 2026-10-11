@@ -3753,13 +3753,14 @@ position = Vector2(418, 655.5)
 shape = SubResource("RectangleShape2D_onkbk")
 
 [node name="ObstcaleSpawner" type="Timer" parent="." unique_id=65027973]
-wait_time = 1.5
+wait_time = 0.75
 autostart = true
 
 [node name="BoatPlayer" parent="." unique_id=28851345 instance=ExtResource("2_q7iaq")]
 position = Vector2(577, 558)
 
 [node name="Camera2D" type="Camera2D" parent="BoatPlayer" unique_id=43298443]
+position = Vector2(0, -118)
 zoom = Vector2(2, 2)
 
 [connection signal="timeout" from="ObstcaleSpawner" to="." method="_on_obstcale_spawner_timeout"]
