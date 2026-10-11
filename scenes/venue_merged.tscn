@@ -16,7 +16,6 @@
 [ext_resource type="Script" uid="uid://bn3tyvv2xjsnx" path="res://scenes/gather_rubbish/bin.gd" id="9_231yp"]
 [ext_resource type="PackedScene" uid="uid://dyq4dosoaidih" path="res://scenes/characters/npc/npc.tscn" id="9_a0263"]
 [ext_resource type="PackedScene" uid="uid://cuymkwx4rxacg" path="res://scenes/gather_rubbish/GarbageMode.tscn" id="10_ae56i"]
-[ext_resource type="Script" uid="uid://c0uhlh24gvfj0" path="res://scenes/deltarune_flowers/npc.gd" id="10_evnvw"]
 [ext_resource type="PackedScene" uid="uid://c4wvn1wxqow3q" path="res://scenes/characters/player/player.tscn" id="11_yuhmj"]
 [ext_resource type="PackedScene" uid="uid://bvomy02667opt" path="res://scenes/caffeine_mode/Caffeine Mode.tscn" id="12_qhtkb"]
 [ext_resource type="PackedScene" uid="uid://cujocc6edectd" path="res://scenes/cat/cat.tscn" id="14_2atwm"]
@@ -25,8 +24,6 @@
 [ext_resource type="Script" uid="uid://bgrqlmxasa87k" path="res://scenes/venue/rhythm_mode.gd" id="16_qhtkb"]
 [ext_resource type="PackedScene" uid="uid://b4rrbx3u0hm6r" path="res://scenes/lit_campfire/lit_campfire.tscn" id="17_5pec1"]
 [ext_resource type="PackedScene" uid="uid://cwkuta35ityxj" path="res://scenes/ui/ui.tscn" id="18_codyl"]
-[ext_resource type="PackedScene" uid="uid://5jvo5evyjqkj" path="res://scenes/deltarune_flowers/flowers_starter.tscn" id="21_xd1d4"]
-[ext_resource type="PackedScene" uid="uid://cwqjn1q0iosdj" path="res://scenes/deltarune_flowers/deltarune_scene.tscn" id="22_5pec1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3ivs"]
 texture = ExtResource("2_5pec1")
@@ -2689,49 +2686,29 @@ texture = ExtResource("4_bnncy")
 44:61/0 = 0
 36:36/size_in_atlas = Vector2i(4, 6)
 36:36/0 = 0
-0:36/size_in_atlas = Vector2i(4, 6)
 0:36/0 = 0
-4:36/size_in_atlas = Vector2i(4, 6)
 4:36/0 = 0
-16:36/size_in_atlas = Vector2i(4, 6)
 16:36/0 = 0
-20:36/size_in_atlas = Vector2i(4, 6)
 20:36/0 = 0
-24:36/size_in_atlas = Vector2i(4, 6)
 24:36/0 = 0
-28:36/size_in_atlas = Vector2i(4, 6)
 28:36/0 = 0
-40:36/size_in_atlas = Vector2i(4, 6)
 40:36/0 = 0
 22:18/size_in_atlas = Vector2i(2, 5)
 22:18/0 = 0
-34:12/size_in_atlas = Vector2i(2, 4)
 34:12/0 = 0
-24:12/size_in_atlas = Vector2i(2, 4)
 24:12/0 = 0
-22:12/size_in_atlas = Vector2i(2, 4)
 22:12/0 = 0
 18:1/size_in_atlas = Vector2i(6, 7)
 18:1/0 = 0
-20:44/size_in_atlas = Vector2i(4, 6)
 20:44/0 = 0
-24:44/size_in_atlas = Vector2i(4, 6)
 24:44/0 = 0
-28:44/size_in_atlas = Vector2i(4, 6)
 28:44/0 = 0
-36:45/size_in_atlas = Vector2i(4, 5)
 36:45/0 = 0
-40:45/size_in_atlas = Vector2i(4, 5)
 40:45/0 = 0
-44:45/size_in_atlas = Vector2i(4, 5)
 44:45/0 = 0
-24:60/size_in_atlas = Vector2i(4, 6)
 24:60/0 = 0
-28:60/size_in_atlas = Vector2i(4, 6)
 28:60/0 = 0
-32:60/size_in_atlas = Vector2i(4, 6)
 32:60/0 = 0
-4:44/size_in_atlas = Vector2i(4, 6)
 4:44/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_igolw"]
@@ -4297,103 +4274,11 @@ height = 73.026855
 radius = 28.221329
 height = 73.026855
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0x67c"]
-size = Vector2(812.5, 83.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgnym"]
-size = Vector2(65, 219.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iiwx3"]
-size = Vector2(62.75, 606)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_gsias"]
-radius = 14.508618
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6o1fr"]
-size = Vector2(286, 39)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dh5br"]
-size = Vector2(43, 33.5)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vjksx"]
-radius = 28.5
-height = 63.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kusfh"]
-radius = 29.0
-height = 74.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1qomx"]
-radius = 29.0
-height = 74.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nf1a0"]
-radius = 42.0
-height = 104.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yu4jn"]
-radius = 28.221329
-height = 61.15808
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j4ka3"]
-radius = 28.221329
-height = 61.15808
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a74ls"]
-radius = 28.221329
-height = 61.15808
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_13gjr"]
-radius = 28.221329
-height = 61.15808
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6u0xw"]
-radius = 28.221329
-height = 61.15808
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gcllr"]
-radius = 28.221329
-height = 61.15808
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l35sd"]
-radius = 28.221329
-height = 61.15808
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bepkc"]
-radius = 26.97107
-height = 59.93921
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ojt6"]
-radius = 28.221329
-height = 61.15808
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_esbcp"]
-radius = 28.221329
-height = 61.15808
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j4j3o"]
-radius = 28.221329
-height = 61.15808
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r1bec"]
-radius = 28.221329
-height = 73.026855
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p25c1"]
-radius = 28.221329
-height = 73.026855
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4psid"]
-radius = 28.221329
-height = 73.026855
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kdkxr"]
-radius = 28.221329
-height = 73.026855
-
-[node name="venue_better" type="Node2D" unique_id=305777334]
+[node name="Venue" type="Node2D" unique_id=305777334]
 y_sort_enabled = true
 scale = Vector2(2, 2)
+
+[node name="CanvasLayer" parent="." unique_id=1600729092 instance=ExtResource("1_vkfqj")]
 
 [node name="Map" type="Node2D" parent="." unique_id=1968220234]
 
@@ -4450,13 +4335,6 @@ position = Vector2(51.5, 84)
 npc_number = 15
 on_interact = SubResource("GDScript_sy5xd")
 
-[node name="Flowery" parent="." unique_id=14356517 instance=ExtResource("9_a0263")]
-position = Vector2(603.5, 298.5)
-scale = Vector2(0.75, 0.75)
-npc_number = 18
-on_interact = ExtResource("10_evnvw")
-frame_size = Vector2i(26, 60)
-
 [node name="Anomar" parent="." unique_id=1575755990 instance=ExtResource("9_a0263")]
 position = Vector2(406.5, 301.5)
 npc_number = 17
@@ -4464,7 +4342,7 @@ on_interact = SubResource("GDScript_hxsln")
 
 [node name="Chris_Caffeine" parent="." unique_id=1776127735 instance=ExtResource("9_a0263")]
 position = Vector2(23, 262.5)
-npc_number = 20
+npc_number = 16
 on_interact = SubResource("GDScript_qhtkb")
 
 [node name="Player" parent="." unique_id=1882750258 instance=ExtResource("11_yuhmj")]
@@ -4478,7 +4356,7 @@ target = NodePath("../Player")
 [node name="NavigationAgent2D2" type="NavigationAgent2D" parent="Cat" unique_id=2081964082]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1912044444]
-navigation_polygon = SubResource("NavigationPolygon_hyd08")
+navigation_polygon = SubResource("NavigationPolygon_5pec1")
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1801175178 groups=["navigation_polygon_source_geometry_group"]]
 y_sort_enabled = true
@@ -4531,9 +4409,9 @@ position = Vector2(653, 351)
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/CaffeineDispenser" unique_id=1799000002]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D5" unique_id=645098876]
 position = Vector2(-29, -325)
-shape = SubResource("RectangleShape2D_kaadr")
+shape = SubResource("RectangleShape2D_6knl4")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="Collisions" unique_id=680350905]
 position = Vector2(653, 351)
@@ -5004,22 +4882,16 @@ position = Vector2(925, 214.5)
 rotation = -3.1359696
 shape = SubResource("CapsuleShape2D_kdkxr")
 
-[node name="dialog" parent="." unique_id=1600729092 instance=ExtResource("1_vkfqj")]
-
-[node name="GarbageMode" parent="." unique_id=1061071523 node_paths=PackedStringArray("dialog") instance=ExtResource("10_ae56i")]
-dialog = NodePath("../dialog")
+[node name="GarbageMode" parent="." unique_id=1061071523 instance=ExtResource("10_ae56i")]
 
 [node name="CaffeineMode" parent="." unique_id=1799000003 node_paths=PackedStringArray("dialog") instance=ExtResource("12_qhtkb")]
 script = ExtResource("16_5n8o0")
-dialog = NodePath("../dialog")
+dialog = NodePath("../CanvasLayer")
 
 [node name="DebuggingMode" type="Node2D" parent="." unique_id=1494169214]
 script = ExtResource("15_hxsln")
 
 [node name="RhythmMode" type="Node2D" parent="." unique_id=1175701009]
 script = ExtResource("16_qhtkb")
-
-[node name="DeltaruneFlowers" parent="." unique_id=1430473623 instance=ExtResource("21_xd1d4")]
-exported_scene = ExtResource("22_5pec1")
 
 [node name="Ui" parent="." unique_id=579426520 instance=ExtResource("18_codyl")]
