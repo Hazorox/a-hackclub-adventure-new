@@ -1,5 +1,6 @@
 extends Node
 
+# Variables
 var rhythem_score : int = 0
 
 var objective := {"title":"first_talk","description":"Strike up a talk with someone"}
@@ -21,7 +22,6 @@ func _ready()->void:
 	add_child(_timer)
 
 func _process(_delta:float)->void:
-	print(flowery_done)
 	if rubbish_score==10:
 		garbage_mode_on=false
 

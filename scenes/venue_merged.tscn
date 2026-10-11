@@ -1862,8 +1862,8 @@ position = Vector2(-460, -241)
 shape = SubResource("RectangleShape2D_qhtkb")
 
 [node name="dialog" parent="." unique_id=1600729092 instance=ExtResource("1_vkfqj")]
-offset = Vector2(0, 0)
-transform = Transform2D(1, 0, 0, 1, 0, 0)
+offset = Vector2(0, 50)
+transform = Transform2D(1, 0, 0, 1, 0, 50)
 
 [node name="GarbageMode" parent="." unique_id=1061071523 node_paths=PackedStringArray("dialog") instance=ExtResource("10_ae56i")]
 dialog = NodePath("../dialog")
