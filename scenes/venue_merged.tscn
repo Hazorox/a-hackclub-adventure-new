@@ -1867,8 +1867,7 @@ script = ExtResource("15_hxsln")
 [node name="RhythmMode" type="Node2D" parent="." unique_id=1175701009]
 script = ExtResource("16_qhtkb")
 
-[node name="DeltaruneFlowers" parent="." unique_id=1430473623 node_paths=PackedStringArray("dialog") instance=ExtResource("21_xd1d4")]
-dialog = NodePath("../dialog")
+[node name="DeltaruneFlowers" parent="." unique_id=1430473623 instance=ExtResource("21_xd1d4")]
 exported_scene = ExtResource("22_5pec1")
 
 [node name="Ui" parent="." unique_id=579426520 instance=ExtResource("18_codyl")]

@@ -37,8 +37,10 @@ radius = 119.0042
 [node name="DeltaruneScene" type="Node2D" unique_id=1317907814]
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=922266263 groups=["heart_player"]]
+light_mask = 3
+visibility_layer = 3
+z_index = 999
 position = Vector2(120, 422)
-scale = Vector2(0.75, 0.75)
 script = ExtResource("3_mw0xd")
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1232283702]
@@ -52,6 +54,7 @@ limit_smoothed = true
 [node name="dialog" parent="player/Camera2D" unique_id=1600729092 instance=ExtResource("2_xurc2")]
 
 [node name="Sprite2D" type="Sprite2D" parent="player" unique_id=427181905]
+scale = Vector2(3, 3)
 texture = ExtResource("2_mw0xd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=735593351]
@@ -109,19 +112,19 @@ layout_mode = 2
 theme_override_constants/separation = 600
 alignment = 1
 
-[node name="1" type="TextureRect" parent="CanvasLayer/VSplitContainer/HBoxContainer" unique_id=997123467]
+[node name="0" type="TextureRect" parent="CanvasLayer/VSplitContainer/HBoxContainer" unique_id=997123467]
 layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("2_mw0xd")
 script = ExtResource("1_x3q3r")
 
-[node name="3" type="TextureRect" parent="CanvasLayer/VSplitContainer/HBoxContainer" unique_id=1625335303]
+[node name="2" type="TextureRect" parent="CanvasLayer/VSplitContainer/HBoxContainer" unique_id=1625335303]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_mw0xd")
 script = ExtResource("1_x3q3r")
 
-[node name="5" type="TextureRect" parent="CanvasLayer/VSplitContainer/HBoxContainer" unique_id=1071651772]
+[node name="4" type="TextureRect" parent="CanvasLayer/VSplitContainer/HBoxContainer" unique_id=1071651772]
 layout_mode = 2
 size_flags_horizontal = 8
 texture = ExtResource("2_mw0xd")
@@ -137,19 +140,17 @@ offset_bottom = 599.0
 layout_mode = 2
 theme_override_constants/separation = 600
 
-[node name="2" type="TextureRect" parent="CanvasLayer/VSplitContainer2/HBoxContainer2" unique_id=494481630]
+[node name="1" type="TextureRect" parent="CanvasLayer/VSplitContainer2/HBoxContainer2" unique_id=494481630]
 layout_mode = 2
 texture = ExtResource("2_mw0xd")
 script = ExtResource("1_x3q3r")
 
-[node name="4" type="TextureRect" parent="CanvasLayer/VSplitContainer2/HBoxContainer2" unique_id=1902925769]
+[node name="3" type="TextureRect" parent="CanvasLayer/VSplitContainer2/HBoxContainer2" unique_id=1902925769]
 layout_mode = 2
-texture = ExtResource("2_mw0xd")
 script = ExtResource("1_x3q3r")
 
-[node name="6" type="TextureRect" parent="CanvasLayer/VSplitContainer2/HBoxContainer2" unique_id=441657139]
+[node name="5" type="TextureRect" parent="CanvasLayer/VSplitContainer2/HBoxContainer2" unique_id=441657139]
 layout_mode = 2
-texture = ExtResource("2_mw0xd")
 script = ExtResource("1_x3q3r")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VSplitContainer2" unique_id=73578535]
@@ -195,5 +196,11 @@ shape = SubResource("CircleShape2D_0hvcy")
 position = Vector2(2494, 318)
 scale = Vector2(4, 4)
 texture = ExtResource("5_0hpqs")
+
+[node name="borders" type="StaticBody2D" parent="." unique_id=1619168763]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="borders" unique_id=419249966]
+build_mode = 1
+polygon = PackedVector2Array(0, 2, 0, 721, 2560, 721, 2560, 1)
 
 [connection signal="body_entered" from="flowery" to="flowery" method="_on_body_entered"]

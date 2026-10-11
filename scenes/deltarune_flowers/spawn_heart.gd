@@ -9,4 +9,4 @@ const colors= [
 	Color("a020f0"),
 ]
 func _ready() -> void:
-	modulate = colors[int(name)-1]
+	texture = load("res://assets/heart_%s.png"%name)
