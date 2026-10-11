@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b4rrbx3u0hm6r"]
 
 [ext_resource type="Texture2D" uid="uid://b1rv7jxywcy0b" path="res://assets/free-office-pixel-art/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Props/Animation/Animation_Campfire.png" id="1_02y41"]
+[ext_resource type="Script" uid="uid://bg4ca8y2xp1li" path="res://scenes/lit_campfire/lit_campfire.gd" id="1_th2ax"]
+[ext_resource type="Texture2D" uid="uid://buxl715n7ygt7" path="res://assets/free-office-pixel-art/Julia_walk_Left.png" id="2_wtn7p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtn7p"]
 atlas = ExtResource("1_02y41")
@@ -34,6 +36,14 @@ region = Rect2(192, 0, 32, 32)
 atlas = ExtResource("1_02y41")
 region = Rect2(224, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4jl2"]
+atlas = ExtResource("2_wtn7p")
+region = Rect2(175, 0, 25, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqtcf"]
+atlas = ExtResource("2_wtn7p")
+region = Rect2(50, 0, 25, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_s7wsd"]
 animations = [{
 "frames": [{
@@ -62,12 +72,34 @@ animations = [{
 "texture": SubResource("AtlasTexture_b5cko")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"lit",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4jl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqtcf")
+}],
+"loop": 1,
+"name": &"na",
+"speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7wsd"]
+radius = 37.107952
+
 [node name="LitCampfire" type="Node2D" unique_id=1153259599]
+script = ExtResource("1_th2ax")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=214220431]
 sprite_frames = SubResource("SpriteFrames_s7wsd")
-frame_progress = 0.81956476
+animation = &"lit"
+autoplay = "na"
+frame_progress = 0.45618027
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2073904518]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1087241079]
+shape = SubResource("CircleShape2D_s7wsd")
