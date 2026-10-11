@@ -4108,6 +4108,16 @@ func run(npc:CharacterBody2D,player:CharacterBody2D):
 	Globals.friends += 1
 "
 
+[sub_resource type="GDScript" id="GDScript_clf25"]
+script/source = "extends RefCounted
+# Flowery interaction script
+func run(npc:CharacterBody2D,_player:CharacterBody2D):
+	# Get deltarune flowers Node2D and start
+	var mode = npc.get_parent().get_node(\"DeltaruneFlowers\")
+	if mode:
+		mode.start()
+"
+
 [sub_resource type="GDScript" id="GDScript_hxsln"]
 script/source = "extends RefCounted
 
@@ -4344,6 +4354,13 @@ on_interact = SubResource("GDScript_yuhmj")
 position = Vector2(51.5, 84)
 npc_number = 15
 on_interact = SubResource("GDScript_sy5xd")
+
+[node name="Flowery" parent="." unique_id=14356517 instance=ExtResource("9_a0263")]
+position = Vector2(603.5, 298.5)
+scale = Vector2(0.75, 0.75)
+npc_number = 18
+on_interact = SubResource("GDScript_clf25")
+frame_size = Vector2i(26, 60)
 
 [node name="Anomar" parent="." unique_id=1575755990 instance=ExtResource("9_a0263")]
 position = Vector2(406.5, 301.5)
@@ -4711,34 +4728,9 @@ shape = SubResource("RectangleShape2D_s4ga0")
 position = Vector2(1056, 9)
 shape = SubResource("RectangleShape2D_0x67c")
 
-[node name="StaticBody2D11" type="StaticBody2D" parent="Collisions" unique_id=84148072]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D11" unique_id=194687449]
-position = Vector2(1058, 534.75)
-shape = SubResource("RectangleShape2D_0x67c")
-
-[node name="StaticBody2D12" type="StaticBody2D" parent="Collisions" unique_id=286683157]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D12" unique_id=57469164]
-position = Vector2(634.5, 466.25)
-shape = SubResource("RectangleShape2D_dgnym")
-
-[node name="StaticBody2D35" type="StaticBody2D" parent="Collisions" unique_id=587541751]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D35" unique_id=1234540141]
-position = Vector2(1447.625, 269)
-shape = SubResource("RectangleShape2D_iiwx3")
-
-[node name="campfire" type="StaticBody2D" parent="Collisions" unique_id=478581908]
-
-[node name="LitCampfire" parent="Collisions/campfire" unique_id=1153259599 instance=ExtResource("17_5pec1")]
-position = Vector2(1066, 299)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/campfire" unique_id=1800060170]
-position = Vector2(1065, 300.5)
-shape = SubResource("CircleShape2D_gsias")
-
-[node name="StaticBody2D37" type="StaticBody2D" parent="Collisions" unique_id=116286922]
+[node name="dialog" parent="." unique_id=1600729092 instance=ExtResource("1_vkfqj")]
+offset = Vector2(0, 0)
+transform = Transform2D(1, 0, 0, 1, 0, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D37" unique_id=1402936930]
 position = Vector2(1167, 410.5)
