@@ -27,8 +27,10 @@ const audio_path = \"res://assets/audio/flowery.wav\"
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"heart_player\"):
 		dialog.queue_text(\"And you're the red soul... DETERMINATION\",sprite_path,npc_name,audio_path)
-		await get_tree().create_timer(4.67).timeout
-		get_parent().queue_free()
+		await dialog.finished
+		Globals.flowery_done = true
+		print(\"SET FLOWER_DONE TO TRUEEE\")
+		get_parent().get_parent().queue_free()
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hvcy"]
@@ -185,23 +187,25 @@ texture = ExtResource("2_mw0xd")
 position = Vector2(-1.3333334, -4)
 shape = SubResource("CircleShape2D_nfrx5")
 
-[node name="flowery" type="Area2D" parent="." unique_id=784273814 node_paths=PackedStringArray("dialog")]
+[node name="flowery" type="Area2D" parent="CanvasLayer" unique_id=784273814 node_paths=PackedStringArray("dialog")]
 script = SubResource("GDScript_0hpqs")
-dialog = NodePath("../CanvasLayer/player/Camera2D/dialog")
+dialog = NodePath("../player/Camera2D/dialog")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="flowery" unique_id=702439263]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/flowery" unique_id=702439263]
 position = Vector2(2480, 321)
 shape = SubResource("CircleShape2D_0hvcy")
 
-[node name="Sprite2D" type="Sprite2D" parent="flowery" unique_id=2137724283]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/flowery" unique_id=2137724283]
 position = Vector2(2494, 318)
 scale = Vector2(4, 4)
 texture = ExtResource("5_0hpqs")
 
 [node name="borders" type="StaticBody2D" parent="." unique_id=1619168763]
+collision_layer = 7
+collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="borders" unique_id=419249966]
 build_mode = 1
 polygon = PackedVector2Array(0, 2, 0, 721, 2560, 721, 2560, 1)
 
-[connection signal="body_entered" from="flowery" to="flowery" method="_on_body_entered"]
+[connection signal="body_entered" from="CanvasLayer/flowery" to="CanvasLayer/flowery" method="_on_body_entered"]

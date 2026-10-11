@@ -12,6 +12,7 @@ var caffeine_on := false
 var caffeine_time =25
 var caffeine_in_time :=false
 var caffeine_done:=false
+var flowery_done :=false
 func _ready()->void:
 	_timer = Timer.new()
 	_timer.wait_time = 0.5
@@ -20,6 +21,7 @@ func _ready()->void:
 	add_child(_timer)
 
 func _process(_delta:float)->void:
+	print(flowery_done)
 	if rubbish_score==10:
 		garbage_mode_on=false
 

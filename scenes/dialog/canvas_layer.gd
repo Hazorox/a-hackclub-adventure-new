@@ -58,7 +58,8 @@ func _process(delta: float) -> void:
 			if Input.is_action_just_pressed("ui_accept"):
 				hide_box()
 				change_state(STATE.READY)
-				finished.emit()
+				if queue.is_empty():
+					finished.emit()
 
 func hide_box():
 	cont.hide()
