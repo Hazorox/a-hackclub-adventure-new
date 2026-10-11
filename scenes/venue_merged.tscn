@@ -1376,11 +1376,12 @@ func run(npc:CharacterBody2D,player:CharacterBody2D):
 
 [sub_resource type="GDScript" id="GDScript_clf25"]
 script/source = "extends RefCounted
-
-func run(npc:CharacterBody2D,player:CharacterBody2D):
+# Flowery interaction script
+func run(npc:CharacterBody2D,_player:CharacterBody2D):
+	# Get deltarune flowers Node2D and start
 	var mode = npc.get_parent().get_node(\"DeltaruneFlowers\")
 	if mode:
-		mode.start(player)
+		mode.start()
 "
 
 [sub_resource type="GDScript" id="GDScript_hxsln"]
