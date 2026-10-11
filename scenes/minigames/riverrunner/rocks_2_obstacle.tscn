@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dcw4caaox3wr6" path="res://assets/River-Runner/Autumn Forest/Autumn_Forest_Objects.png" id="1_axgbr"]
 [ext_resource type="Texture2D" uid="uid://i6os0rbechkd" path="res://assets/River-Runner/Autumn Forest/Autumn_Forest_Tiles.png" id="2_wy0px"]
+[ext_resource type="Script" uid="uid://1nwxifbaanrm" path="res://scenes/minigames/riverrunner/obstacle.gd" id="3_wy0px"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r8oll"]
 texture = ExtResource("1_axgbr")
@@ -458,8 +459,11 @@ size = Vector2(32, 32)
 [node name="RocksObstacle2" type="TileMapLayer" unique_id=724510222]
 tile_map_data = PackedByteArray(0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 9, 0, 0, 0, 2, 0, 1, 0, 1, 0, 1, 0, 9, 0, 0, 0, 2, 0, 2, 0, 1, 0, 1, 0, 10, 0, 0, 0, 1, 0, 2, 0, 1, 0, 0, 0, 10, 0, 0, 0)
 tile_set = SubResource("TileSet_onkbk")
+script = ExtResource("3_wy0px")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1365222106]
+[node name="Area2D" type="Area2D" parent="." unique_id=1365222106 groups=["Obstacle"]]
+collision_layer = 32768
+collision_mask = 32768
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=248935537]
 position = Vector2(32, 32)

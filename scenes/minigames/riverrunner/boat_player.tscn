@@ -1,18 +1,30 @@
 [gd_scene format=3 uid="uid://bj5wcri1xi5rx"]
 
+[ext_resource type="Script" uid="uid://duvw777okrlb0" path="res://scenes/minigames/riverrunner/boat_player.gd" id="1_33qfu"]
 [ext_resource type="Texture2D" uid="uid://cdnn7tmdvvc4q" path="res://assets/River-Runner/boat.png" id="1_gxiog"]
+[ext_resource type="Script" uid="uid://bgn8m88afdpkk" path="res://scenes/minigames/riverrunner/collosion_detection_area.gd" id="3_k7xqs"]
 
-[node name="BoatPlayer" type="CharacterBody2D" unique_id=28851345]
+[node name="BoatPlayer" type="CharacterBody2D" unique_id=28851345 groups=["player"]]
+collision_layer = 32768
+collision_mask = 32768
+script = ExtResource("1_33qfu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2109251088]
 texture = ExtResource("1_gxiog")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=528310105]
+visible = false
 position = Vector2(0, 20)
 polygon = PackedVector2Array(-2, -42, 2, -42, 2, -41, 5, -41, 5, -40, 6, -40, 6, -39, 7, -39, 7, -38, 8, -38, 8, -37, 10, -37, 10, -36, 11, -36, 11, -35, 12, -35, 12, -34, 13, -34, 13, -33, 14, -33, 14, -32, 15, -32, 15, -30, 16, -30, 16, -28, 17, -28, 17, 9, 16, 9, 16, 10, 15, 10, 15, 11, 5, 11, -15, 11, -15, 10, -16, 10, -16, 9, -17, 9, -17, -28, -16, -28, -16, -30, -15, -30, -15, -32, -14, -32, -14, -33, -13, -33, -13, -34, -12, -34, -12, -35, -11, -35, -11, -36, -10, -36, -10, -37, -8, -37, -8, -38, -7, -38, -7, -39, -6, -39, -6, -40, -5, -40, -5, -41, -2, -41)
 
-[node name="CollosionDetectionArea" type="Area2D" parent="." unique_id=1292912263]
+[node name="CollosionDetectionArea" type="Area2D" parent="." unique_id=1292912263 groups=["BoatPlayer"]]
+visible = false
+collision_layer = 32768
+collision_mask = 32768
+script = ExtResource("3_k7xqs")
 
 [node name="CollisionDetection" type="CollisionPolygon2D" parent="CollosionDetectionArea" unique_id=2121497930]
 position = Vector2(0, 20)
 polygon = PackedVector2Array(-2, -42, 2, -42, 2, -41, 5, -41, 5, -40, 6, -40, 6, -39, 7, -39, 7, -38, 8, -38, 8, -37, 10, -37, 10, -36, 11, -36, 11, -35, 12, -35, 12, -34, 13, -34, 13, -33, 14, -33, 14, -32, 15, -32, 15, -30, 16, -30, 16, -28, 17, -28, 17, 9, 16, 9, 16, 10, 15, 10, 15, 11, 5, 11, -15, 11, -15, 10, -16, 10, -16, 9, -17, 9, -17, -28, -16, -28, -16, -30, -15, -30, -15, -32, -14, -32, -14, -33, -13, -33, -13, -34, -12, -34, -12, -35, -11, -35, -11, -36, -10, -36, -10, -37, -8, -37, -8, -38, -7, -38, -7, -39, -6, -39, -6, -40, -5, -40, -5, -41, -2, -41)
+
+[connection signal="area_entered" from="CollosionDetectionArea" to="CollosionDetectionArea" method="_on_area_entered"]
