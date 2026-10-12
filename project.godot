@@ -41,6 +41,7 @@ pure=""
 waterbucket=""
 navigation_polygon_source_geometry_group=""
 player=""
+caffeine=""
 
 [gui]
 

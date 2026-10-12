@@ -4155,7 +4155,7 @@ func run(npc: CharacterBody2D, player: CharacterBody2D):
 	npc.get_tree().change_scene_to_file(\"res://scenes/runner/runner.tscn\")
 "
 
-[sub_resource type="GDScript" id="GDScript_clf25"]
+[sub_resource type="GDScript" id="GDScript_vjksx"]
 resource_local_to_scene = true
 script/source = "extends RefCounted
 # Flowery interaction script
@@ -4426,7 +4426,7 @@ npc_number = 5
 on_interact = SubResource("GDScript_ad8vj")
 
 [node name="Wemmbu" parent="." unique_id=240098621 instance=ExtResource("9_a0263")]
-position = Vector2(569, 192.5)
+position = Vector2(558.5, 227)
 scale = Vector2(1, 1)
 npc_number = 33
 on_interact = SubResource("GDScript_4tm60")
@@ -4447,7 +4447,7 @@ on_interact = SubResource("GDScript_dgnym")
 position = Vector2(603.5, 298.5)
 scale = Vector2(0.75, 0.75)
 npc_number = 18
-on_interact = SubResource("GDScript_clf25")
+on_interact = SubResource("GDScript_vjksx")
 frame_size = Vector2i(26, 60)
 
 [node name="Anomar" parent="." unique_id=1575755990 instance=ExtResource("9_a0263")]
@@ -4455,8 +4455,8 @@ position = Vector2(406.5, 301.5)
 npc_number = 17
 on_interact = SubResource("GDScript_hxsln")
 
-[node name="Chris_Caffeine" parent="." unique_id=1776127735 instance=ExtResource("9_a0263")]
-position = Vector2(23, 262.5)
+[node name="Chris_Caffeine" parent="." unique_id=1776127735 groups=["caffeine"] instance=ExtResource("9_a0263")]
+position = Vector2(32, 255)
 npc_number = 20
 on_interact = SubResource("GDScript_qhtkb")
 
@@ -5020,7 +5020,7 @@ dialog = NodePath("../dialog")
 [node name="ChargerMode" parent="." unique_id=1209609974 instance=ExtResource("18_5pec1")]
 
 [node name="Charger" parent="ChargerMode" unique_id=1781202528 instance=ExtResource("19_bnncy")]
-position = Vector2(487, 338)
+position = Vector2(488.5, 327.5)
 
 [node name="Typerace" parent="." unique_id=573944210 instance=ExtResource("20_vwcaf")]
 layer = 50
