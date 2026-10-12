@@ -8,7 +8,6 @@ extends CharacterBody2D
 @export var npc_number:int=2
 @export var on_interact:GDScript
 @export var once_near:GDScript
-
 # sprite and interaction_area
 @onready var sprite:AnimatedSprite2D =$AnimatedSprite2D
 @onready var interaction_area:Area2D = $interaction

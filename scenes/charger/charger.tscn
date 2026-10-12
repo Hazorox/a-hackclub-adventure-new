@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://drsxmnvesie3d"]
+
+[ext_resource type="Script" uid="uid://bbwh3mtvg3y5k" path="res://scenes/charger/charger.gd" id="1_52slo"]
+[ext_resource type="AudioStream" uid="uid://bk5eleqnn55mu" path="res://assets/audio/detector.mp3" id="2_3u5vh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 14.035668
+
+[node name="Charger" type="Area2D" unique_id=1781202528]
+script = ExtResource("1_52slo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1607867365]
+shape = SubResource("CircleShape2D_nfrx5")
+
+[node name="audio" type="AudioStreamPlayer" parent="." unique_id=1306214943]
+stream = ExtResource("2_3u5vh")
+parameters/looping = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

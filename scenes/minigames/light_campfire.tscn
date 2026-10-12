@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cwr87lau1gbbq"]
+
+[ext_resource type="Script" uid="uid://c33d3euvdyl5j" path="res://scenes/minigames/light_campfire.gd" id="1_sfgxf"]
+
+[node name="light_campfire" type="Node2D" unique_id=1827608705]
+script = ExtResource("1_sfgxf")
