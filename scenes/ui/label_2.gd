@@ -21,7 +21,8 @@ func _process(delta: float) -> void:
 		running = false
 		update_text()
 		time_up.emit()
-		get_tree().change_scene_to_file("res://scenes/minigames/debugging_winning.tscn")
+		get_tree().change_scene_to_file("res://scenes/venue_merged.tscn")
+		Globals.friends += 1
 		return
 
 	update_text()

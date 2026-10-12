@@ -46,10 +46,10 @@ func _process(delta: float) -> void:
 				change_state(STATE.DONE)
 		STATE.CHOOSING:
 			get_tree().paused=true
-			if Input.is_action_just_pressed("down"):
+			if Input.is_action_just_pressed("ui_down"):
 				index = (index+1) % choices.size()
 				render_choices()
-			if Input.is_action_just_pressed("up"):
+			if Input.is_action_just_pressed("ui_up"):
 				index = (index - 1 + choices.size()) % choices.size()
 				render_choices()
 			if Input.is_action_just_pressed("ui_accept"):

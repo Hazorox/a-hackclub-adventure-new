@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://c4bsxkp20340c" path="res://assets/fonts/Velocita - Italic Personal Use.otf" id="4_wem23"]
 [ext_resource type="FontFile" uid="uid://c5aysy3aic3rd" path="res://assets/fonts/Electroharmonix.otf" id="5_3ovsr"]
 [ext_resource type="Script" uid="uid://6m2yoq5q5ck1" path="res://scenes/main_menu/lore.gd" id="7_5seab"]
+[ext_resource type="Script" uid="uid://dpofrgp64qagy" path="res://scenes/main_menu/controls.gd" id="8_4xg86"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfrx5"]
 bg_color = Color(0.9372549, 0.27058825, 0.29803923, 1)
@@ -290,6 +291,27 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
 text = "LORE"
 script = ExtResource("7_5seab")
+
+[node name="controls" type="Button" parent="." unique_id=1934151187]
+layout_mode = 0
+offset_left = 975.0
+offset_top = 337.0
+offset_right = 1229.8751
+offset_bottom = 465.5846
+rotation = 0.36294797
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.7607843, 0.8745098, 0.45882353, 1)
+theme_override_colors/font_pressed_color = Color(0.5137255, 0.7490196, 0.02745098, 1)
+theme_override_colors/font_hover_color = Color(0.5137255, 0.7490196, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+text = "Controls"
+script = ExtResource("8_4xg86")
 
 [connection signal="pressed" from="vsplit/start" to="vsplit/start" method="_on_pressed"]
 [connection signal="pressed" from="vsplit/opt" to="vsplit/opt" method="_on_opt_pressed"]

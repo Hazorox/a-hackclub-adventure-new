@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const CATCH_DISTANCE = 30.0
-const GAME_OVER_SCENE = "res://scenes/minigames/debugging_game_over.tscn"
+const GAME_OVER_SCENE = "res://scenes/venue_merged.tscn"
 
 @export var target: Node2D
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 
 	if global_position.distance_to(target.global_position) < CATCH_DISTANCE:
 		caught = true
-		get_tree().change_scene_to_file.call_deferred(GAME_OVER_SCENE)
+		get_tree().change_scene_to_file(GAME_OVER_SCENE)
 		return
 
 	repath_timer -= delta

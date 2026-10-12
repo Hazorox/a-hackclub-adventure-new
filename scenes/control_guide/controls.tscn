@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://wbpk4ghmossy"]
+
+[ext_resource type="FontFile" uid="uid://dn0mce5o6v668" path="res://assets/fonts/saturno.ttf" id="1_dbs3s"]
+[ext_resource type="Texture2D" uid="uid://ubfdwrw0myfp" path="res://assets/icons/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/W.png" id="2_jnsr2"]
+[ext_resource type="Texture2D" uid="uid://dgu5tna5etqj" path="res://assets/icons/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/A.png" id="3_ib003"]
+[ext_resource type="Texture2D" uid="uid://bws6vow5obvxw" path="res://assets/icons/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/D.png" id="4_c7p67"]
+[ext_resource type="Texture2D" uid="uid://nyau7i8n60ag" path="res://assets/icons/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/S.png" id="5_cpx4m"]
+[ext_resource type="Texture2D" uid="uid://dqx500lqb6yht" path="res://assets/icons/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/E.png" id="6_ib003"]
+[ext_resource type="FontFile" uid="uid://2nud8ahhhlqd" path="res://assets/fonts/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf" id="7_c7p67"]
+[ext_resource type="Texture2D" uid="uid://4ejes3ja02ib" path="res://assets/icons/SimpleKeys/SimpleKeys/Jumbo/Dark/Single PNGs/ENTER.png" id="8_c7p67"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="9_bac0j"]
+[ext_resource type="Script" uid="uid://duru1es5fwbmc" path="res://scenes/control_guide/home.gd" id="10_bac0j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ory3f"]
+bg_color = Color(0.09667533, 0.49683473, 0.03950025, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.003921569, 0.08235294, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpjly"]
+bg_color = Color(0.32156864, 0.64705884, 0.05882353, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.12156863, 0.45490196, 0.20784314, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mjgn"]
+bg_color = Color(0.16470589, 0.5176471, 0.039215688, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.101960786, 0.4117647, 0.039215688, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1adne"]
+bg_color = Color(0.16470589, 0.5176471, 0.02745098, 1)
+border_color = Color(0.09803922, 0.40784314, 0.015686275, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[node name="Controls" type="Control" unique_id=613478611]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=967861286]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1938145915]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15686275, 0.15686275, 0.15686275, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1174712183]
+offset_left = 410.0
+offset_top = 83.0
+offset_right = 867.0
+offset_bottom = 174.0
+theme_override_fonts/font = ExtResource("1_dbs3s")
+theme_override_font_sizes/font_size = 86
+text = "Controls"
+
+[node name="W" type="Sprite2D" parent="CanvasLayer" unique_id=1181144626]
+position = Vector2(272, 238)
+scale = Vector2(4.2894735, 4.2894735)
+texture = ExtResource("2_jnsr2")
+
+[node name="A" type="Sprite2D" parent="CanvasLayer" unique_id=831239989]
+position = Vector2(191, 314.00003)
+scale = Vector2(3.6710525, 3.6710525)
+texture = ExtResource("3_ib003")
+
+[node name="D" type="Sprite2D" parent="CanvasLayer" unique_id=2067533180]
+position = Vector2(358, 308)
+scale = Vector2(3.3684196, 3.3684194)
+texture = ExtResource("4_c7p67")
+
+[node name="S" type="Sprite2D" parent="CanvasLayer" unique_id=550748358]
+position = Vector2(275, 323.00003)
+scale = Vector2(4.2894735, 4.2894735)
+texture = ExtResource("5_cpx4m")
+
+[node name="E" type="Sprite2D" parent="CanvasLayer" unique_id=1312568002]
+position = Vector2(240, 427)
+scale = Vector2(4.1842103, 4.1842103)
+texture = ExtResource("6_ib003")
+
+[node name="Label3" type="Label" parent="CanvasLayer" unique_id=410455369]
+offset_left = 309.75
+offset_top = 505.00003
+offset_right = 804.75
+offset_bottom = 635.0
+theme_override_fonts/font = ExtResource("7_c7p67")
+theme_override_font_sizes/font_size = 67
+text = "Interact"
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=758907728]
+offset_left = 308.0
+offset_top = 370.0
+offset_right = 803.0
+offset_bottom = 500.0
+theme_override_fonts/font = ExtResource("7_c7p67")
+theme_override_font_sizes/font_size = 67
+text = "Interact"
+
+[node name="Enter" type="Sprite2D" parent="CanvasLayer" unique_id=1413096489]
+position = Vector2(219, 555)
+scale = Vector2(3.222222, 3.2222223)
+texture = ExtResource("8_c7p67")
+
+[node name="Next" type="Button" parent="CanvasLayer" unique_id=1924957860]
+offset_left = 900.00006
+offset_top = 277.0
+offset_right = 1169.0
+offset_bottom = 405.5846
+rotation = 0.36294797
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.7607843, 0.8745098, 0.45882353, 1)
+theme_override_colors/font_pressed_color = Color(0.5137255, 0.7490196, 0.02745098, 1)
+theme_override_colors/font_hover_color = Color(0.5137255, 0.7490196, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("9_bac0j")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_ory3f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dpjly")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0mjgn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1adne")
+text = "Home"
+script = ExtResource("10_bac0j")

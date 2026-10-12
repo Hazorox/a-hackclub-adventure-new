@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://bgqsgxvbejrwd"]
+
+[ext_resource type="FontFile" uid="uid://c4bsxkp20340c" path="res://assets/fonts/Velocita - Italic Personal Use.otf" id="1_s5sy8"]
+[ext_resource type="FontFile" uid="uid://cvf44geks3fr8" path="res://assets/fonts/born2bsporty-fs.otf" id="2_8a06g"]
+[ext_resource type="Texture2D" uid="uid://chcc3ycwimdnu" path="res://assets/heart.png" id="3_yy304"]
+[ext_resource type="Texture2D" uid="uid://nqqhpjk8p4v4" path="res://assets/heart_0.png" id="4_c67yn"]
+[ext_resource type="Texture2D" uid="uid://bm3804cycbwjv" path="res://assets/heart_1.png" id="5_58gw1"]
+[ext_resource type="Texture2D" uid="uid://bfa771a23bill" path="res://assets/heart_2.png" id="6_mtpgb"]
+[ext_resource type="Texture2D" uid="uid://ngc0tn0vcvo4" path="res://assets/heart_3.png" id="7_benof"]
+[ext_resource type="Texture2D" uid="uid://c85xdhk15t6ot" path="res://assets/heart_4.png" id="8_hlept"]
+[ext_resource type="Texture2D" uid="uid://cp4oof43d8oxu" path="res://assets/heart_5.png" id="9_2qec1"]
+[ext_resource type="Texture2D" uid="uid://d32g22g251wp7" path="res://assets/icons/frends.png" id="10_mjphv"]
+[ext_resource type="Texture2D" uid="uid://b8dtxkvqhsbpd" path="res://assets/icons/celebration.png" id="11_kjmai"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="12_58gw1"]
+[ext_resource type="Script" uid="uid://d4mowrk1t70jh" path="res://scenes/control_guide/next.gd" id="13_mtpgb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_benof"]
+bg_color = Color(0.09667533, 0.49683473, 0.03950025, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.003921569, 0.08235294, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlept"]
+bg_color = Color(0.32156864, 0.64705884, 0.05882353, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.12156863, 0.45490196, 0.20784314, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qec1"]
+bg_color = Color(0.16470589, 0.5176471, 0.039215688, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.101960786, 0.4117647, 0.039215688, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjphv"]
+bg_color = Color(0.16470589, 0.5176471, 0.02745098, 1)
+border_color = Color(0.09803922, 0.40784314, 0.015686275, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[node name="Control" type="Control" unique_id=807478039]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1276866538]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=408130577]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2805424, 0.2805424, 0.2805424, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1999618588]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -489.0
+offset_top = 8.0
+offset_right = 495.0
+offset_bottom = 231.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_s5sy8")
+theme_override_font_sizes/font_size = 106
+text = "How To Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1857076929]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -430.0
+offset_top = 223.0
+offset_right = 452.0
+offset_bottom = 446.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_8a06g")
+theme_override_font_sizes/font_size = 32
+text = "Here is how to play our game, first u need to find an npc to interact with,
+ the can range from steve and ellie, to wemmbu and flowery. Those NPCs give you tasks, and for every task you take from every NPC makes u their friend, Th goal of the game is to make as much tresure as possible. But be careful, some challenges are genuenly difficult..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Heart" type="Sprite2D" parent="CanvasLayer" unique_id=2070026085]
+position = Vector2(620, 555.00006)
+scale = Vector2(3.1875, 3.1875)
+texture = ExtResource("3_yy304")
+
+[node name="Heart0" type="Sprite2D" parent="CanvasLayer" unique_id=1459102472]
+position = Vector2(480, 521)
+texture = ExtResource("4_c67yn")
+
+[node name="Heart1" type="Sprite2D" parent="CanvasLayer" unique_id=1471339588]
+position = Vector2(617, 465)
+texture = ExtResource("5_58gw1")
+
+[node name="Heart2" type="Sprite2D" parent="CanvasLayer" unique_id=477232746]
+position = Vector2(482, 631)
+texture = ExtResource("6_mtpgb")
+
+[node name="Heart3" type="Sprite2D" parent="CanvasLayer" unique_id=1877719556]
+position = Vector2(623, 660)
+texture = ExtResource("7_benof")
+
+[node name="Heart4" type="Sprite2D" parent="CanvasLayer" unique_id=523525780]
+position = Vector2(749, 499)
+texture = ExtResource("8_hlept")
+
+[node name="Heart5" type="Sprite2D" parent="CanvasLayer" unique_id=1054302689]
+position = Vector2(748, 598)
+texture = ExtResource("9_2qec1")
+
+[node name="Frends" type="Sprite2D" parent="CanvasLayer" unique_id=1283987997]
+position = Vector2(168, 556)
+rotation = 0.406139
+scale = Vector2(3.78125, 3.78125)
+texture = ExtResource("10_mjphv")
+
+[node name="Celebration" type="Sprite2D" parent="CanvasLayer" unique_id=359702603]
+position = Vector2(1132, 115.00006)
+rotation = -0.00023730472
+scale = Vector2(0.2483665, 0.2483665)
+texture = ExtResource("11_kjmai")
+flip_h = true
+
+[node name="Next" type="Button" parent="CanvasLayer" unique_id=691824436]
+offset_left = 981.00006
+offset_top = 468.0
+offset_right = 1250.0
+offset_bottom = 596.5846
+rotation = 0.36294797
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.7607843, 0.8745098, 0.45882353, 1)
+theme_override_colors/font_pressed_color = Color(0.5137255, 0.7490196, 0.02745098, 1)
+theme_override_colors/font_hover_color = Color(0.5137255, 0.7490196, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("12_58gw1")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_benof")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hlept")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2qec1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mjphv")
+text = "nEXT"
+script = ExtResource("13_mtpgb")
