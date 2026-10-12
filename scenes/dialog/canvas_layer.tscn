@@ -4,7 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://v3vgb04n0okn" path="res://assets/cat/normal_talking.png" id="1_sbv0p"]
 [ext_resource type="Script" uid="uid://cgwi6bvty6rkb" path="res://scenes/dialog/canvas_layer.gd" id="1_y7ilj"]
 [ext_resource type="FontFile" uid="uid://dskwk2qw2bidm" path="res://assets/fonts/Dedicool.ttf" id="2_sbv0p"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="3_yope6"]
 [ext_resource type="Script" uid="uid://dqpp4aggiwmol" path="res://scenes/dialog/sprite_2d.gd" id="4_yope6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjksx"]
+font = ExtResource("3_yope6")
+font_size = 32
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7wsd"]
 bg_color = Color(1.2108967, 0.75916886, 0.410962, 1)
@@ -29,6 +36,9 @@ theme_override_colors/font_color = Color(0.21960784, 0.07058824, 0.40392157, 1)
 theme_override_fonts/font = ExtResource("1_ey3e0")
 theme_override_font_sizes/font_size = 48
 text = "Cat"
+label_settings = SubResource("LabelSettings_vjksx")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1756455059]
 anchors_preset = 10

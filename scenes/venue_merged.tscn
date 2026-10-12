@@ -4241,7 +4241,7 @@ size = Vector2(9, 263)
 size = Vector2(179.5, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6knl4"]
-size = Vector2(27, 67)
+size = Vector2(31, 68.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igolw"]
 size = Vector2(78.5, 22)
@@ -4451,7 +4451,7 @@ on_interact = SubResource("GDScript_vjksx")
 frame_size = Vector2i(26, 60)
 
 [node name="Anomar" parent="." unique_id=1575755990 instance=ExtResource("9_a0263")]
-position = Vector2(406.5, 301.5)
+position = Vector2(402.5, 279)
 npc_number = 17
 on_interact = SubResource("GDScript_hxsln")
 
@@ -4550,7 +4550,7 @@ collision_mask = 3
 script = ExtResource("18_6o1fr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/dispenser1" unique_id=628020754]
-position = Vector2(-203.5, -319)
+position = Vector2(-205.5, -318.25)
 shape = SubResource("RectangleShape2D_6knl4")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Collisions" unique_id=1535142750]

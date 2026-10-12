@@ -7,8 +7,14 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wg07"]
 bg_color = Color(0, 0, 0, 0.6509804)
 
+[sub_resource type="LabelSettings" id="LabelSettings_i47w5"]
+font = ExtResource("3_p634r")
+font_size = 48
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmpgr"]
-bg_color = Color(0.9218815, 0.4470998, 3.85046e-07, 1)
+bg_color = Color(0.8712626, 0.49064952, 1.732707e-06, 1)
 border_width_left = 8
 border_width_top = 8
 border_width_right = 8
@@ -19,12 +25,6 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-
-[sub_resource type="LabelSettings" id="LabelSettings_i47w5"]
-font = ExtResource("3_p634r")
-font_size = 48
-outline_size = 16
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Typerace" type="CanvasLayer" unique_id=573944210]
 script = ExtResource("1_i47w5")
@@ -42,8 +42,17 @@ layout_mode = 2
 theme_override_constants/separation = 96
 alignment = 1
 
+[node name="stats" type="Label" parent="PanelContainer/VBoxContainer" unique_id=408707111]
+layout_mode = 2
+text = "STATS TEXT"
+label_settings = SubResource("LabelSettings_i47w5")
+horizontal_alignment = 1
+
 [node name="phrase" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1208851596]
 layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_fonts/normal_font = ExtResource("2_kmpgr")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
@@ -59,14 +68,10 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_kmpgr")
 placeholder_text = "Start Typing !!"
 alignment = 1
+expand_to_text_length = true
 context_menu_enabled = false
 emoji_menu_enabled = false
 middle_mouse_paste_enabled = false
 drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
-
-[node name="stats" type="Label" parent="PanelContainer/VBoxContainer" unique_id=408707111]
-layout_mode = 2
-text = "STATS TEXT"
-label_settings = SubResource("LabelSettings_i47w5")
-horizontal_alignment = 1
+caret_blink = true
