@@ -15,6 +15,7 @@ var caffeine_in_time :=false
 var caffeine_done:=false
 var flowery_done :=false
 var tissue_boxes_owned := 0
+var is_player_showering := false
 
 var detector_on :=false
 func _ready()->void:
