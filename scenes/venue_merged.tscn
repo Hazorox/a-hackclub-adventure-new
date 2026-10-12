@@ -30,7 +30,7 @@
 [ext_resource type="Script" uid="uid://c6vu7x1jtlumh" path="res://scenes/dispenser_2.gd" id="17_gsias"]
 [ext_resource type="PackedScene" uid="uid://l3ur1eggbcoc" path="res://scenes/charger/ChargerMode.tscn" id="18_5pec1"]
 [ext_resource type="Script" uid="uid://cfwf411mqsvom" path="res://scenes/dispenser_1.gd" id="18_6o1fr"]
-[ext_resource type="PackedScene" uid="uid://cwkuta35ityxj" path="res://scenes/ui/ui.tscn" id="18_codyl"]
+[ext_resource type="PackedScene" uid="uid://cbb4cib7n3fjn" path="res://scenes/ui/ui.tscn" id="18_codyl"]
 [ext_resource type="PackedScene" uid="uid://drsxmnvesie3d" path="res://scenes/charger/charger.tscn" id="19_bnncy"]
 [ext_resource type="PackedScene" uid="uid://dpebmq34nwok7" path="res://scenes/typerace/typerace.tscn" id="20_vwcaf"]
 [ext_resource type="Script" uid="uid://cg02ewpvreb2u" path="res://scenes/deltarune_flowers/deltarune_flowers.gd" id="23_vwcaf"]
@@ -4123,6 +4123,8 @@ script/source = "func run(npc:CharacterBody2D,player:CharacterBody2D):
 	rhythm_mode.start()
 	npc.queue_free()
 	Globals.friends += 1
+"
+
 [sub_resource type="GDScript" id="GDScript_4tm60"]
 script/source = "extends RefCounted
 
@@ -4469,7 +4471,6 @@ target = NodePath("../Player")
 [node name="NavigationAgent2D2" type="NavigationAgent2D" parent="Cat" unique_id=2081964082]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1912044444]
-navigation_polygon = SubResource("NavigationPolygon_hyd08")
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_5pec1")
 
