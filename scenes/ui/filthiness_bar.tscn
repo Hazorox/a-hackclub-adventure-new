@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dxrrbsns7pamp"]
+
+[ext_resource type="Texture2D" uid="uid://dyadh4kt7vjd2" path="res://assets/YouShouldShower/UI/ProgressBar/ProgressBar_border.png" id="1_ekdhd"]
+[ext_resource type="Script" uid="uid://dog1yowd4hgjg" path="res://scenes/ui/filthiness_bar.gd" id="1_kcd85"]
+[ext_resource type="Texture2D" uid="uid://brcuho6y0ea3f" path="res://assets/YouShouldShower/UI/ProgressBar/ProgressBar_fill.png" id="2_kcd85"]
+[ext_resource type="FontFile" uid="uid://2nud8ahhhlqd" path="res://assets/fonts/kenney_kenney-fonts/Fonts/Kenney Pixel Square.ttf" id="3_eacxl"]
+
+[node name="FilthinessBar" type="Node2D" unique_id=1926469464]
+script = ExtResource("1_kcd85")
+
+[node name="Bar" type="TextureProgressBar" parent="." unique_id=1058912955]
+offset_right = 44.0
+offset_bottom = 27.0
+scale = Vector2(5, 5)
+texture_under = ExtResource("1_ekdhd")
+texture_over = ExtResource("1_ekdhd")
+texture_progress = ExtResource("2_kcd85")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1220207216]
+offset_left = 3.0
+offset_top = 40.0
+offset_right = 109.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("3_eacxl")
+text = "Filthiness BAr"
+
+[node name="Timer" type="Timer" parent="." unique_id=1796798842]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

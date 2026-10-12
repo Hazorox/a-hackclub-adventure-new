@@ -2,6 +2,8 @@
 class_name NPC
 extends CharacterBody2D
 
+@onready var bar: TextureProgressBar = $"../Ui/FilthinessBar/Bar"
+
 # To determine the sprite sheet to use
 @export var npc_number:int=2
 @export var on_interact:GDScript
@@ -33,17 +35,17 @@ func _ready()->void:
 	sprite.stop()
 
 func _process(_delta:float)->void:
-	
+	if bar.value < 100:
 	# Run once_near one time once player approaches
-	if interactable and once_near !=  null and not once_near_ran:
-		once_near.new().run(self,player_in_range)
-		once_near_ran = true
-		return
-	if npc_number==20 and Globals.caffeine_done:
-		queue_free()
-	if Input.is_action_just_pressed("interact") and interactable and on_interact != null:
-		print("INTERACTED")
-		on_interact.new().run(self,player_in_range)
+		if interactable and once_near !=  null and not once_near_ran:
+			once_near.new().run(self,player_in_range)
+			once_near_ran = true
+			return
+		if npc_number==20 and Globals.caffeine_done:
+			queue_free()
+		if Input.is_action_just_pressed("interact") and interactable and on_interact != null:
+			print("INTERACTED")
+			on_interact.new().run(self,player_in_range)
 
 
 # Building spriteframes from sheet
