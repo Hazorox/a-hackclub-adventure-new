@@ -1,0 +1,15 @@
+diff --git a/scenes/venue_merged.tscn b/scenes/venue_merged.tscn
+index 79d9a45..7f113e3 100644
+--- a/scenes/venue_merged.tscn
++++ b/scenes/venue_merged.tscn
+@@ -5032,10 +5032,6 @@ script = ExtResource("15_hxsln")
+ [node name="Runner" type="Node2D" parent="." unique_id=490676430]
+ script = ExtResource("24_dgnym")
+ 
+-[node name="DeltaruneFlowers" type="Node2D" parent="." unique_id=2073444816]
+-script = ExtResource("23_vwcaf")
+-exported_scene = ExtResource("24_f3ivs")
+-
+ [node name="RhythmMode" type="Node2D" parent="." unique_id=1175701009]
+ script = ExtResource("16_qhtkb")
+ 
