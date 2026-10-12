@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 		audio.volume_db = lerpf(min_db,max_db,closeness)
 		audio.volume_linear = closeness*closeness
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and Globals.detector_on:
 		audio.stop()
 		finished.emit()
 		queue_free()

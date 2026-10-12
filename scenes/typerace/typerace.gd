@@ -2,6 +2,10 @@ extends CanvasLayer
 # Finishing signal to recieve from the venue side
 signal finished(won:bool)
 
+# Dialog constants
+const sprite_path := "res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_14/character_14_frame16x20.png"
+const npc_name := "Stacy"
+const audio_path := "res://assets/audio/dialog_sound.wav"
 # Phrases made by me :D
 const phrases = [
 	"but it works on my machine",
@@ -17,7 +21,7 @@ const phrases = [
 	"snacks time"
 ]
 # The opponent's avg wpm
-const target_wpm := 50
+const target_wpm := 60
 # Logic management vars, queue of phrases and current phrase
 var queue:Array=[]
 var current := ""
@@ -25,18 +29,23 @@ var chars := 0
 var start_ms :=0
 var running :=false
 
-# Phrase RichTextLabel, input, and stats label
+var npc:CharacterBody2D = null
+
+# Phrase RichTextLabel, input, stats label, and dialog
 @onready var phrase_label:RichTextLabel = $PanelContainer/VBoxContainer/phrase
 @onready var input:LineEdit = $PanelContainer/VBoxContainer/input
 @onready var stats:Label = $PanelContainer/VBoxContainer/stats
-
+@onready var dialog:CanvasLayer = get_parent().get_node("dialog")
 # work when paused to prevent player input
 func _ready():
 	input.text_changed.connect(_on_input_changed)
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 
 # Pause, setup phrases and game and grab focus
-func start():
+func start(npc:CharacterBody2D):
+	dialog.queue_text("Haiiiiii, how fast can you write?",sprite_path,npc_name,audio_path)
+	dialog.queue_text("Doesn't matter... I CHALLENGE YOU TO A TYPING RACE",sprite_path,npc_name,audio_path)
+	await dialog.finished
 	get_tree().paused=true
 	var pool = phrases.duplicate()
 	pool.shuffle()
@@ -96,6 +105,12 @@ func finish():
 	var won = wpm >= target_wpm
 	stats.text="%d WPM - %s"% [int(wpm),"You Win!" if won else "Too slow, try again"]
 	finished.emit(won)
+	if npc!=null:
+		Globals.friends+=1
+		npc.queue_free()
+	get_tree().paused = false
+	queue_free()
+	
 
 
 func _process(_delta:float):
