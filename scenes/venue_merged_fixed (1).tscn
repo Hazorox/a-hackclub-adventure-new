@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b00verarjaq04"]
+[gd_scene format=4 uid="uid://bhf6a7ui2lgg"]
 
 [ext_resource type="Texture2D" uid="uid://bauaopyc8pyqv" path="res://assets/office_assets/office_assets/tiles.png" id="1_84xi6"]
 [ext_resource type="PackedScene" uid="uid://did26kwowqjgl" path="res://scenes/dialog/canvas_layer.tscn" id="1_vkfqj"]
@@ -22,14 +22,14 @@
 [ext_resource type="Script" uid="uid://dyq283ahcnrx" path="res://scenes/venue/debugging_mode.gd" id="15_hxsln"]
 [ext_resource type="Script" uid="uid://cga7v2rupt8vi" path="res://scenes/caffeine_mode/caffeine_mode.gd" id="16_5n8o0"]
 [ext_resource type="Script" uid="uid://bgrqlmxasa87k" path="res://scenes/venue/rhythm_mode.gd" id="16_qhtkb"]
-[ext_resource type="PackedScene" uid="uid://l3ur1eggbcoc" path="res://scenes/charger/ChargerMode.tscn" id="18_5pec1"]
 [ext_resource type="PackedScene" uid="uid://cbb4cib7n3fjn" path="res://scenes/ui/ui.tscn" id="18_codyl"]
-[ext_resource type="PackedScene" uid="uid://drsxmnvesie3d" path="res://scenes/charger/charger.tscn" id="19_bnncy"]
-[ext_resource type="PackedScene" uid="uid://dpebmq34nwok7" path="res://scenes/typerace/typerace.tscn" id="20_vwcaf"]
 [ext_resource type="PackedScene" uid="uid://5jvo5evyjqkj" path="res://scenes/deltarune_flowers/flowers_starter.tscn" id="21_xd1d4"]
 [ext_resource type="PackedScene" uid="uid://cwqjn1q0iosdj" path="res://scenes/deltarune_flowers/deltarune_scene.tscn" id="22_5pec1"]
 [ext_resource type="Script" uid="uid://csbiykiymphsb" path="res://scenes/tissue_boxes.gd" id="22_bnncy"]
 [ext_resource type="Script" uid="uid://bekohls3nk7yc" path="res://scenes/take_a_shower_mode.gd" id="22_vwcaf"]
+[ext_resource type="PackedScene" uid="uid://l3ur1eggbcoc" path="res://scenes/charger/ChargerMode.tscn" id="18_5pec1"]
+[ext_resource type="PackedScene" uid="uid://drsxmnvesie3d" path="res://scenes/charger/charger.tscn" id="19_bnncy"]
+[ext_resource type="PackedScene" uid="uid://dpebmq34nwok7" path="res://scenes/typerace/typerace.tscn" id="20_vwcaf"]
 [ext_resource type="PackedScene" uid="uid://b4rrbx3u0hm6r" path="res://scenes/lit_campfire/lit_campfire.tscn" id="26_f3ivs"]
 [ext_resource type="Texture2D" uid="uid://keddu6y312et" path="res://assets/free-office-pixel-art/beanbags/beanbag1.png" id="29_0x67c"]
 [ext_resource type="Texture2D" uid="uid://bmdur88h6rqvv" path="res://assets/free-office-pixel-art/beanbags/beanbag2.png" id="30_dgnym"]
@@ -41,7 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://cuv4m5tedpr7a" path="res://assets/free-office-pixel-art/beanbags/beanbag8.png" id="36_kusfh"]
 [ext_resource type="Texture2D" uid="uid://f8skau6xm7l6" path="res://assets/free-office-pixel-art/beanbags/beanbag9.png" id="37_1qomx"]
 [ext_resource type="Texture2D" uid="uid://bmdkcuy6dkb8a" path="res://assets/free-office-pixel-art/beanbags/beanbag10.png" id="38_nf1a0"]
-[ext_resource type="PackedScene" uid="uid://bc385rx85pysa" path="res://scenes/shower_area.tscn" id="42_3dio6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3ivs"]
 texture = ExtResource("2_5pec1")
@@ -4096,7 +4095,6 @@ texture = ExtResource("7_a0263")
 
 [sub_resource type="TileSet" id="TileSet_hsu21"]
 sources/0 = SubResource("TileSetAtlasSource_iu1ai")
-
 [sub_resource type="GDScript" id="GDScript_yuhmj"]
 script/source = "extends RefCounted
 
@@ -4359,7 +4357,6 @@ y_sort_enabled = true
 scale = Vector2(2, 2)
 
 [node name="dialog" parent="." unique_id=1600729092 instance=ExtResource("1_vkfqj")]
-visible = false
 
 [node name="Map" type="Node2D" parent="." unique_id=1968220234]
 
@@ -4385,7 +4382,7 @@ tile_map_data = PackedByteArray("AAD/////BwABAAAAAAAAAP//BwACAAAAAAABAP//BwADAAA
 tile_set = SubResource("TileSet_onkbk")
 
 [node name="InteriorWalls" type="TileMapLayer" parent="Map" unique_id=601154985]
-tile_map_data = PackedByteArray("AAAdAP//AAANAAEAAAAdAAAAAAAJAAIAAAAdAAEAAAAJAAIAAAAdAAIAAAAJAAIAAAAdAAMAAAAJAAMAAAAdAAUAAAAJAAEAAAAdAAcAAAALAAUAAAAdAAgAAAAJAAIAAAAdAAkAAAAJAAIAAAAdAAYAAAAJAAIAAAAdAAsAAAAJAAIAAAAdAAoAAAAJAAIAAAAdAAwAAAAJAAIAAAAdAA0AAAAJAAIAAAAdAA4AAAAJAAMAAAAdABAAAAAJAAEAAAAdABEAAAAJAAIAAAAdABIAAAAJAAIAAAAdABMAAAAJAAIAAAAdABQAAAAJAAIAAAAdABYAAAAMAAEAAAAdABUAAAAJAAIAAAAeAAcAAAAGAAUAAAAfAAcAAAAGAAUAAAAgAAcAAAAGAAUAAAAhAAcAAAAGAAUAAAAiAAcAAAAGAAUAAAAjAAcAAAAGAAUAAAAkAAcAAAAGAAUAAAAlAAcAAAAGAAUAAAAmAAcAAAAGAAUAAAAnAAcAAAAGAAUAAAAgAP//AAAOAAAAAAAgAAAAAAABAAEAAAAgAAEAAAABAAIAAAAgAAIAAAAFAAMAAAAkAP//AAANAAEAAAAkAAAAAAAEAAIAAAAkAAEAAAAEAAEAAAAkAAIAAAAIAAMAAAA=")
+tile_map_data = PackedByteArray("AAAdAP//AAANAAEAAAAdAAAAAAAJAAIAAAAdAAEAAAAJAAIAAAAdAAIAAAAJAAIAAAAdAAMAAAAJAAMAAAAdAAUAAAAJAAEAAAAdAAcAAAALAAUAAAAdAAgAAAAJAAIAAAAdAAkAAAAJAAIAAAAdAAYAAAAJAAIAAAAdAAsAAAAJAAIAAAAdAAoAAAAJAAIAAAAdAAwAAAAJAAIAAAAdAA0AAAAJAAIAAAAdAA4AAAAJAAMAAAAdABAAAAAJAAEAAAAdABEAAAAJAAIAAAAdABIAAAAJAAIAAAAdABMAAAAJAAIAAAAdABQAAAAJAAIAAAAdABYAAAAMAAEAAAAdABUAAAAJAAIAAAAeAAcAAAAGAAUAAAAfAAcAAAAGAAUAAAAgAAcAAAAGAAUAAAAhAAcAAAAGAAUAAAAiAAcAAAAGAAUAAAAjAAcAAAAGAAUAAAAkAAcAAAAGAAUAAAAlAAcAAAAGAAUAAAAmAAcAAAAGAAUAAAAnAAcAAAAGAAUAAAA=")
 tile_set = SubResource("TileSet_ad8vj")
 
 [node name="Desks" type="TileMapLayer" parent="Map" unique_id=1719892390]
@@ -4415,7 +4412,6 @@ on_interact = SubResource("GDScript_yuhmj")
 position = Vector2(585.5, 163)
 npc_number = 5
 on_interact = SubResource("GDScript_ad8vj")
-
 [node name="Wemmbu" parent="." unique_id=240098621 instance=ExtResource("9_a0263")]
 position = Vector2(569, 192.5)
 scale = Vector2(1, 1)
@@ -4783,14 +4779,6 @@ collision_mask = 3
 position = Vector2(-458.75, -315.5)
 shape = SubResource("RectangleShape2D_b8555")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/StaticBody2D32" unique_id=1852655363]
-position = Vector2(-401, -328.5)
-shape = SubResource("RectangleShape2D_b8555")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Collisions/StaticBody2D32" unique_id=2019648113]
-position = Vector2(-347.5, -331)
-shape = SubResource("RectangleShape2D_b8555")
-
 [node name="StaticBody2D33" type="StaticBody2D" parent="Collisions" unique_id=117433795]
 position = Vector2(925, 432)
 collision_layer = 3
@@ -5036,6 +5024,7 @@ autostart = true
 
 [node name="Ui" parent="." unique_id=579426520 instance=ExtResource("18_codyl")]
 
+
 [node name="LitCampfire" parent="." unique_id=1153259599 node_paths=PackedStringArray("dialog") instance=ExtResource("26_f3ivs")]
 position = Vector2(1064.5, 294.5)
 dialog = NodePath("../dialog")
@@ -5096,9 +5085,6 @@ position = Vector2(-499, -151.5)
 scale = Vector2(0.609375, 0.609375)
 texture = ExtResource("38_nf1a0")
 flip_h = true
-
-[node name="ShowerArea" parent="." unique_id=1211996295 instance=ExtResource("42_3dio6")]
-position = Vector2(542, 10.5)
 
 [connection signal="timeout" from="TissueBoxes/Spawning Timer" to="TissueBoxes" method="_on_spawning_timer_timeout"]
 
