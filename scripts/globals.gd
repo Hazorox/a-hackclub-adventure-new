@@ -14,6 +14,8 @@ var caffeine_time =25
 var caffeine_in_time :=false
 var caffeine_done:=false
 var flowery_done :=false
+var tissue_boxes_owned := 0
+
 var detector_on :=false
 func _ready()->void:
 	_timer = Timer.new()
@@ -27,7 +29,6 @@ func _process(_delta:float)->void:
 		player = get_tree().get_first_node_in_group("player")
 	if rubbish_score==10:
 		garbage_mode_on=false
-
 
 func start_caffeine_timer()->void:
 	_timer.start()
