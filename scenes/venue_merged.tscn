@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://l3ur1eggbcoc" path="res://scenes/charger/ChargerMode.tscn" id="18_5pec1"]
 [ext_resource type="PackedScene" uid="uid://cwkuta35ityxj" path="res://scenes/ui/ui.tscn" id="18_codyl"]
 [ext_resource type="PackedScene" uid="uid://drsxmnvesie3d" path="res://scenes/charger/charger.tscn" id="19_bnncy"]
+[ext_resource type="PackedScene" uid="uid://dpebmq34nwok7" path="res://scenes/typerace/typerace.tscn" id="20_vwcaf"]
 [ext_resource type="PackedScene" uid="uid://5jvo5evyjqkj" path="res://scenes/deltarune_flowers/flowers_starter.tscn" id="21_xd1d4"]
 [ext_resource type="PackedScene" uid="uid://cwqjn1q0iosdj" path="res://scenes/deltarune_flowers/deltarune_scene.tscn" id="22_5pec1"]
 
@@ -1916,6 +1917,10 @@ dialog = NodePath("../dialog")
 
 [node name="Charger" parent="ChargerMode" unique_id=1781202528 instance=ExtResource("19_bnncy")]
 position = Vector2(487, 338)
+
+[node name="Typerace" parent="." unique_id=573944210 instance=ExtResource("20_vwcaf")]
+layer = 50
+visible = false
 
 [node name="DebuggingMode" type="Node2D" parent="." unique_id=1494169214]
 script = ExtResource("15_hxsln")
