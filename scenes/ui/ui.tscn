@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cwkuta35ityxj"]
+[gd_scene format=3 uid="uid://cbb4cib7n3fjn"]
 
 [ext_resource type="Script" uid="uid://ds626nm1yq4n2" path="res://scenes/ui/ui.gd" id="1_g5kmx"]
 [ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="1_u7n8c"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://ct1x1fgk6eqe" path="res://scenes/ui/rubbish.gd" id="6_7vp6q"]
 [ext_resource type="Texture2D" uid="uid://5ietx3hi8h0c" path="res://assets/trash assets/banana.png" id="7_jcn1r"]
 [ext_resource type="Texture2D" uid="uid://bipt8hrssntl3" path="res://assets/coffee.png" id="9_uegxj"]
+[ext_resource type="PackedScene" uid="uid://dxrrbsns7pamp" path="res://scenes/ui/filthiness_bar.tscn" id="10_y220t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8t61q"]
 font = ExtResource("1_u7n8c")
@@ -371,3 +372,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_swkix")
 theme_override_styles/focus = SubResource("StyleBoxFlat_hc5d0")
 text = "FULLSCREEN OFF"
 script = SubResource("GDScript_n3vwu")
+
+[node name="FilthinessBar" parent="." unique_id=1926469464 instance=ExtResource("10_y220t")]
+position = Vector2(10, 65)

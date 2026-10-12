@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://brxh4qhg88wkh"]
+
+[ext_resource type="Script" uid="uid://bd41yprl56qls" path="res://scenes/tissue_box.gd" id="1_cqojm"]
+[ext_resource type="Texture2D" uid="uid://clebt41ghkiii" path="res://assets/YouShouldShower/tissue_box.png" id="1_sms3n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
+size = Vector2(26, 17)
+
+[node name="TissueBox" type="Area2D" unique_id=721765744]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_cqojm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=830809982]
+texture = ExtResource("1_sms3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1401023801]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_onkbk")

@@ -5,7 +5,7 @@ const npc_name = "Ellie"
 @export var rubbish_item:PackedScene
 @export var dialog:Node
 func start()->void:
-	print(self, " path: ", get_path(), " dialog: ", dialog)
+	print("HER HERE")
 	if dialog == null:
 		return
 	dialog.queue_text("Hey!!, This place is starting to get messy...",sprite_full,npc_name,audio_path)

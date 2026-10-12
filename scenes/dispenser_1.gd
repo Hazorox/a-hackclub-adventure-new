@@ -1,0 +1,11 @@
+extends Area2D
+
+func _ready()->void:
+	body_entered.connect(player_entered)
+
+func player_entered(body:Node2D)->void:
+	if body.is_in_group("player") and not Globals.caffeine_done:
+		Globals.caffeine_on=false
+		Globals.caffeine_in_time=false
+		Globals.friends+=1
+		Globals.caffeine_done=true

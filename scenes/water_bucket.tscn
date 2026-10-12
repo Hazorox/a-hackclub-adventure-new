@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bogv87tkjgw4m"]
+
+[ext_resource type="Texture2D" uid="uid://3vppwrdyeefd" path="res://assets/YouShouldShower/water_bucket.png" id="1_fc6n6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
+size = Vector2(117, 117)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fc6n6"]
+radius = 16.0
+height = 120.0
+
+[node name="WaterBucket" type="CharacterBody2D" unique_id=1470954719 groups=["waterbucket"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=49598027]
+texture = ExtResource("1_fc6n6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=313913448]
+position = Vector2(-2.5, 48.5)
+shape = SubResource("RectangleShape2D_onkbk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1301390923 groups=["waterbucket"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=347840994 groups=["waterbucket"]]
+position = Vector2(-2, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_fc6n6")
+debug_color = Color(0.42032412, 0.60431224, 0, 0.41960785)
