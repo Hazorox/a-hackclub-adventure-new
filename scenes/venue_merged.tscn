@@ -22,7 +22,9 @@
 [ext_resource type="Script" uid="uid://dyq283ahcnrx" path="res://scenes/venue/debugging_mode.gd" id="15_hxsln"]
 [ext_resource type="Script" uid="uid://cga7v2rupt8vi" path="res://scenes/caffeine_mode/caffeine_mode.gd" id="16_5n8o0"]
 [ext_resource type="Script" uid="uid://bgrqlmxasa87k" path="res://scenes/venue/rhythm_mode.gd" id="16_qhtkb"]
+[ext_resource type="Script" uid="uid://c6vu7x1jtlumh" path="res://scenes/dispenser_2.gd" id="17_gsias"]
 [ext_resource type="PackedScene" uid="uid://l3ur1eggbcoc" path="res://scenes/charger/ChargerMode.tscn" id="18_5pec1"]
+[ext_resource type="Script" uid="uid://cfwf411mqsvom" path="res://scenes/dispenser_1.gd" id="18_6o1fr"]
 [ext_resource type="PackedScene" uid="uid://cwkuta35ityxj" path="res://scenes/ui/ui.tscn" id="18_codyl"]
 [ext_resource type="PackedScene" uid="uid://drsxmnvesie3d" path="res://scenes/charger/charger.tscn" id="19_bnncy"]
 [ext_resource type="PackedScene" uid="uid://dpebmq34nwok7" path="res://scenes/typerace/typerace.tscn" id="20_vwcaf"]
@@ -4215,7 +4217,7 @@ size = Vector2(9, 263)
 size = Vector2(179.5, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6knl4"]
-size = Vector2(16, 48)
+size = Vector2(27, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igolw"]
 size = Vector2(78.5, 22)
@@ -4420,12 +4422,12 @@ on_interact = SubResource("GDScript_hxsln")
 
 [node name="Chris_Caffeine" parent="." unique_id=1776127735 instance=ExtResource("9_a0263")]
 position = Vector2(23, 262.5)
-npc_number = 16
+npc_number = 20
 on_interact = SubResource("GDScript_qhtkb")
 
 [node name="Stacy" parent="." unique_id=199651751 instance=ExtResource("9_a0263")]
 position = Vector2(118.5, 170)
-npc_number = 30
+npc_number = 14
 on_interact = SubResource("GDScript_36q3d")
 
 [node name="Steve" parent="." unique_id=778384211 instance=ExtResource("9_a0263")]
@@ -4447,6 +4449,7 @@ target = NodePath("../Player")
 [node name="NavigationAgent2D2" type="NavigationAgent2D" parent="Cat" unique_id=2081964082]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1912044444]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_5pec1")
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1801175178 groups=["navigation_polygon_source_geometry_group"]]
@@ -4495,22 +4498,24 @@ shape = SubResource("RectangleShape2D_n5bao")
 position = Vector2(-96.75, -231)
 shape = SubResource("RectangleShape2D_7txfk")
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="Collisions" unique_id=378299170]
+[node name="dispenser2" type="Area2D" parent="Collisions" unique_id=738267694]
 position = Vector2(653, 351)
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("17_gsias")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D5" unique_id=645098876]
-position = Vector2(-29, -325)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/dispenser2" unique_id=645098876]
+position = Vector2(-30.5, -321)
 shape = SubResource("RectangleShape2D_6knl4")
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="Collisions" unique_id=680350905]
+[node name="dispenser1" type="Area2D" parent="Collisions" unique_id=11408447]
 position = Vector2(653, 351)
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("18_6o1fr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D6" unique_id=628020754]
-position = Vector2(-205, -325)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/dispenser1" unique_id=628020754]
+position = Vector2(-203.5, -319)
 shape = SubResource("RectangleShape2D_6knl4")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="Collisions" unique_id=1535142750]
@@ -4970,7 +4975,8 @@ position = Vector2(925, 214.5)
 rotation = -3.1359696
 shape = SubResource("CapsuleShape2D_kdkxr")
 
-[node name="GarbageMode" parent="." unique_id=1061071523 instance=ExtResource("10_ae56i")]
+[node name="GarbageMode" parent="." unique_id=1061071523 node_paths=PackedStringArray("dialog") instance=ExtResource("10_ae56i")]
+dialog = NodePath("../dialog")
 
 [node name="CaffeineMode" parent="." unique_id=1799000003 node_paths=PackedStringArray("dialog") instance=ExtResource("12_qhtkb")]
 script = ExtResource("16_5n8o0")
