@@ -150,7 +150,7 @@ frame_progress = 0.5704584
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_onkbk")
 
-[node name="interaction" type="Area2D" parent="." unique_id=2144896024 groups=["player_interaction"]]
+[node name="interaction" type="Area2D" parent="." unique_id=2144896024 groups=["player", "player_interaction"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction" unique_id=2060792654]
 position = Vector2(0, 0.75)

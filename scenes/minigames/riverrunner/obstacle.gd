@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 	var overlapping_bodies = $Area2D.get_overlapping_bodies()
 	for body in overlapping_bodies:
 		if body.is_in_group("player"):
-			pass
+			get_tree().change_scene_to_file("res://scenes/ui/river_runner.tscn")
