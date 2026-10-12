@@ -6,6 +6,8 @@ var score := 0
 
 func _process(delta: float) -> void:
 	$Label.text = "Score :" + str(score)
+	if score == 20:
+		queue_free()
 
 func _on_spawning_timer_timeout() -> void:
 	spawn_water_drops()

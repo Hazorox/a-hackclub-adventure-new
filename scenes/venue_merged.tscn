@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://5jvo5evyjqkj" path="res://scenes/deltarune_flowers/flowers_starter.tscn" id="21_xd1d4"]
 [ext_resource type="PackedScene" uid="uid://cwqjn1q0iosdj" path="res://scenes/deltarune_flowers/deltarune_scene.tscn" id="22_5pec1"]
 [ext_resource type="Script" uid="uid://csbiykiymphsb" path="res://scenes/tissue_boxes.gd" id="22_bnncy"]
+[ext_resource type="Script" uid="uid://bekohls3nk7yc" path="res://scenes/take_a_shower_mode.gd" id="22_vwcaf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae56i"]
 texture = ExtResource("1_84xi6")
@@ -1359,6 +1360,19 @@ func run(npc:CharacterBody2D,player:CharacterBody2D):
 		garbage_mode.start()
 "
 
+[sub_resource type="GDScript" id="GDScript_ad8vj"]
+script/source = "func run(npc:CharacterBody2D,player:CharacterBody2D):
+	if npc.has_meta(\"collectingwater_started\"):
+		return
+	var rhythm_mode = npc.get_parent().get_node_or_null(\"CollectWaterMode\")
+	if rhythm_mode == null:
+		return
+	npc.set_meta(\"collectingwater_started\", true)
+	rhythm_mode.start()
+	npc.queue_free()
+	Globals.friends += 1
+"
+
 [sub_resource type="GDScript" id="GDScript_sy5xd"]
 script/source = "extends RefCounted
 
@@ -1490,6 +1504,11 @@ position = Vector2(558.5, 73.5)
 scale = Vector2(1, 1)
 npc_number = 26
 on_interact = SubResource("GDScript_yuhmj")
+
+[node name="Amon" parent="." unique_id=671926524 instance=ExtResource("9_a0263")]
+position = Vector2(585.5, 163)
+npc_number = 5
+on_interact = SubResource("GDScript_ad8vj")
 
 [node name="Alexander_Debugging" parent="." unique_id=2104099054 instance=ExtResource("9_a0263")]
 position = Vector2(51.5, 84)
@@ -1880,6 +1899,9 @@ script = ExtResource("16_qhtkb")
 
 [node name="DeltaruneFlowers" parent="." unique_id=1430473623 instance=ExtResource("21_xd1d4")]
 exported_scene = ExtResource("22_5pec1")
+
+[node name="CollectWaterMode" type="Node2D" parent="." unique_id=1076949689]
+script = ExtResource("22_vwcaf")
 
 [node name="TissueBoxes" type="Node2D" parent="." unique_id=670883291]
 script = ExtResource("22_bnncy")
