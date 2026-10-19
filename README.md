@@ -2,7 +2,7 @@
 ## Your first hackathon experience
 ## Based on a true story from [Hazoro](https://github.com/hazorox), [Vii](https://github.com/vii-abdullatif), and [AboEl5yr](https://github.com/AdhamMohamedKhairy)
 ### Live at [Itch.io](https://hazoro.itch.io/a-hackclub-adventure) Go Check Now !!
-
+## OLD REPO (MORE COMMIT HISTORYVERY IMPORTANT !!!!) : [HERE](https://github.com/hazorox/a-hackclub-adventure)
 # Backstory
 The 3 of us, agreed to try our first IRL Hackclub Hackathon in Equinox, Egypt. We didn't expect it to be such a unique experience different from all the other hackathons we visited...
 ![alt text](image.png) (Lore accurate pic from Equinox!!!!)
