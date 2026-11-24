@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://bk5eleqnn55mu" path="res://assets/audio/detector.mp3" id="2_3u5vh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
-radius = 14.035668
+radius = 16.03122
 
 [node name="Charger" type="Area2D" unique_id=1781202528]
 script = ExtResource("1_52slo")
