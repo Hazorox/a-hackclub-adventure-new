@@ -44,6 +44,8 @@
 [ext_resource type="Texture2D" uid="uid://cuv4m5tedpr7a" path="res://assets/free-office-pixel-art/beanbags/beanbag8.png" id="36_kusfh"]
 [ext_resource type="Texture2D" uid="uid://f8skau6xm7l6" path="res://assets/free-office-pixel-art/beanbags/beanbag9.png" id="37_1qomx"]
 [ext_resource type="Texture2D" uid="uid://bmdkcuy6dkb8a" path="res://assets/free-office-pixel-art/beanbags/beanbag10.png" id="38_nf1a0"]
+[ext_resource type="PackedScene" uid="uid://bc385rx85pysa" path="res://scenes/shower_area.tscn" id="45_kusfh"]
+[ext_resource type="PackedScene" uid="uid://prx2cm5hlmmd" path="res://scenes/water_collecting.tscn" id="46_1qomx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3ivs"]
 texture = ExtResource("2_5pec1")
@@ -4155,7 +4157,7 @@ func run(npc: CharacterBody2D, player: CharacterBody2D):
 	npc.get_tree().change_scene_to_file(\"res://scenes/runner/runner.tscn\")
 "
 
-[sub_resource type="GDScript" id="GDScript_vjksx"]
+[sub_resource type="GDScript" id="GDScript_1qomx"]
 resource_local_to_scene = true
 script/source = "extends RefCounted
 # Flowery interaction script
@@ -4447,7 +4449,7 @@ on_interact = SubResource("GDScript_dgnym")
 position = Vector2(603.5, 298.5)
 scale = Vector2(0.75, 0.75)
 npc_number = 18
-on_interact = SubResource("GDScript_vjksx")
+on_interact = SubResource("GDScript_1qomx")
 frame_size = Vector2i(26, 60)
 
 [node name="Anomar" parent="." unique_id=1575755990 instance=ExtResource("9_a0263")]
@@ -5016,6 +5018,13 @@ dialog = NodePath("../dialog")
 [node name="CaffeineMode" parent="." unique_id=1799000003 node_paths=PackedStringArray("dialog") instance=ExtResource("12_qhtkb")]
 script = ExtResource("16_5n8o0")
 dialog = NodePath("../dialog")
+
+[node name="WaterCollecting" parent="." unique_id=1279818354 instance=ExtResource("46_1qomx")]
+visible = false
+scale = Vector2(0.5, 0.5)
+
+[node name="ShowerArea" parent="." unique_id=1211996295 instance=ExtResource("45_kusfh")]
+position = Vector2(522.5, 10.5)
 
 [node name="ChargerMode" parent="." unique_id=1209609974 instance=ExtResource("18_5pec1")]
 
