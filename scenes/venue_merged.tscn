@@ -44,8 +44,8 @@
 [ext_resource type="Texture2D" uid="uid://cuv4m5tedpr7a" path="res://assets/free-office-pixel-art/beanbags/beanbag8.png" id="36_kusfh"]
 [ext_resource type="Texture2D" uid="uid://f8skau6xm7l6" path="res://assets/free-office-pixel-art/beanbags/beanbag9.png" id="37_1qomx"]
 [ext_resource type="Texture2D" uid="uid://bmdkcuy6dkb8a" path="res://assets/free-office-pixel-art/beanbags/beanbag10.png" id="38_nf1a0"]
-[ext_resource type="PackedScene" uid="uid://bc385rx85pysa" path="res://scenes/shower_area.tscn" id="45_kusfh"]
-[ext_resource type="PackedScene" uid="uid://prx2cm5hlmmd" path="res://scenes/water_collecting.tscn" id="46_1qomx"]
+[ext_resource type="Script" uid="uid://ooqakow844mj" path="res://scenes/trivia_game.gd" id="45_kusfh"]
+[ext_resource type="Script" uid="uid://bykssaig228ik" path="res://scripts/timo_interact.gd" id="46_1qomx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3ivs"]
 texture = ExtResource("2_5pec1")
@@ -4368,6 +4368,7 @@ height = 73.026855
 
 [node name="Venue" type="Node2D" unique_id=305777334]
 y_sort_enabled = true
+position = Vector2(-1, 0)
 scale = Vector2(2, 2)
 
 [node name="dialog" parent="." unique_id=1600729092 instance=ExtResource("1_vkfqj")]
@@ -4440,6 +4441,7 @@ npc_number = 15
 on_interact = SubResource("GDScript_sy5xd")
 
 [node name="Ash" parent="." unique_id=1604789631 instance=ExtResource("9_a0263")]
+visible = false
 position = Vector2(1241, 301.50003)
 scale = Vector2(1.44, 1.44)
 npc_number = 32
@@ -4830,7 +4832,7 @@ shape = SubResource("RectangleShape2D_dgnym")
 [node name="StaticBody2D11" type="StaticBody2D" parent="Collisions" unique_id=1194735255]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D11" unique_id=1362796936]
-position = Vector2(1051.5, 531.5)
+position = Vector2(1055, 533.5)
 shape = SubResource("RectangleShape2D_0x67c")
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="Collisions" unique_id=1010152905]
@@ -5121,6 +5123,15 @@ position = Vector2(-499, -151.5)
 scale = Vector2(0.609375, 0.609375)
 texture = ExtResource("38_nf1a0")
 flip_h = true
+
+[node name="TriviaGame" type="Node2D" parent="." unique_id=81246927 node_paths=PackedStringArray("dialog")]
+script = ExtResource("45_kusfh")
+dialog = NodePath("../dialog")
+
+[node name="Timo" parent="." unique_id=573067203 instance=ExtResource("9_a0263")]
+position = Vector2(344.5, 156.5)
+npc_number = 17
+on_interact = ExtResource("46_1qomx")
 
 [connection signal="timeout" from="TissueBoxes/Spawning Timer" to="TissueBoxes" method="_on_spawning_timer_timeout"]
 
