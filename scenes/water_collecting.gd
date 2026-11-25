@@ -4,10 +4,11 @@ var water_drops_scene : PackedScene = preload("res://scenes/pure_water_drops.tsc
 var contaminated_scene : PackedScene = preload("res://scenes/contaminated_water.tscn")
 var score := 0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Label.text = "Score :" + str(score)
 	if score == 20:
-		queue_free()
+		SceneManager.return_to_cached()
+
 
 func _on_spawning_timer_timeout() -> void:
 	spawn_water_drops()

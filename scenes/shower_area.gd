@@ -6,8 +6,7 @@ var player_in_range := false
 
 func _process(_delta: float) -> void:
 	if player_in_range and Globals.tissue_boxes_owned >= 1 and Input.is_action_just_pressed("interact"):
-		game_shower.visible = true
-		print("one piece")
+		SceneManager.go_to_scene("res://scenes/water_collecting.tscn")
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
