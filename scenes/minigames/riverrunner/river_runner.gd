@@ -21,7 +21,7 @@ func spawn_obstacles() -> void:
 	var max_attempts = 10
 	var player = get_tree().get_first_node_in_group("player")
 	for i in range(max_attempts):
-		random_x = randi_range(430, 620)
+		random_x = randi_range(430 * 1.25, 620 * 1.25)
 		valid_position = true
 		if player and abs(player.global_position.x - random_x) < 70:
 			valid_position = false

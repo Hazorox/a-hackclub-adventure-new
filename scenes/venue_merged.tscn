@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bauaopyc8pyqv" path="res://assets/office_assets/office_assets/tiles.png" id="1_84xi6"]
 [ext_resource type="PackedScene" uid="uid://did26kwowqjgl" path="res://scenes/dialog/canvas_layer.tscn" id="1_vkfqj"]
+[ext_resource type="Script" uid="uid://dd37ijr38mein" path="res://scenes/venue_merged.gd" id="1_yu4jn"]
 [ext_resource type="Texture2D" uid="uid://jqudpx2pq1o4" path="res://assets/free-office-pixel-art/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Ground.png" id="2_5pec1"]
 [ext_resource type="Texture2D" uid="uid://db11vj8tnka68" path="res://assets/free-office-pixel-art/office-partitions-1.png" id="2_30580"]
 [ext_resource type="Texture2D" uid="uid://68us4rhpd7ap" path="res://assets/free-office-pixel-art/The Fan-tasy Tileset (Free) 1.5.7/The Fan-tasy Tileset (Free)/Art/Ground Tileset/Tileset_Road.png" id="3_bnncy"]
@@ -39,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bvyrk6dhmtau7" path="res://assets/free-office-pixel-art/beanbags/beanbag3.png" id="31_iiwx3"]
 [ext_resource type="Texture2D" uid="uid://dwsjxex43n7eq" path="res://assets/free-office-pixel-art/beanbags/beanbag4.png" id="32_gsias"]
 [ext_resource type="Texture2D" uid="uid://cxxutc6iu1auk" path="res://assets/free-office-pixel-art/beanbags/beanbag5.png" id="33_6o1fr"]
+[ext_resource type="Script" uid="uid://dwhaoixf0gk1j" path="res://scenes/river_runnee.gd" id="33_j4ka3"]
 [ext_resource type="Texture2D" uid="uid://qxk3jtxkgql4" path="res://assets/free-office-pixel-art/beanbags/beanbag6.png" id="34_dh5br"]
 [ext_resource type="Texture2D" uid="uid://c5va7csvlesmj" path="res://assets/free-office-pixel-art/beanbags/beanbag7.png" id="35_vjksx"]
 [ext_resource type="Texture2D" uid="uid://cuv4m5tedpr7a" path="res://assets/free-office-pixel-art/beanbags/beanbag8.png" id="36_kusfh"]
@@ -46,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://bmdkcuy6dkb8a" path="res://assets/free-office-pixel-art/beanbags/beanbag10.png" id="38_nf1a0"]
 [ext_resource type="Script" uid="uid://ooqakow844mj" path="res://scenes/trivia_game.gd" id="45_kusfh"]
 [ext_resource type="Script" uid="uid://bykssaig228ik" path="res://scripts/timo_interact.gd" id="46_1qomx"]
+[ext_resource type="PackedScene" uid="uid://bc385rx85pysa" path="res://scenes/shower_area.tscn" id="48_j4ka3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3ivs"]
 texture = ExtResource("2_5pec1")
@@ -4112,19 +4115,6 @@ func run(npc:CharacterBody2D,player:CharacterBody2D):
 		garbage_mode.start()
 "
 
-[sub_resource type="GDScript" id="GDScript_ad8vj"]
-script/source = "func run(npc:CharacterBody2D,player:CharacterBody2D):
-	if npc.has_meta(\"collectingwater_started\"):
-		return
-	var rhythm_mode = npc.get_parent().get_node_or_null(\"CollectWaterMode\")
-	if rhythm_mode == null:
-		return
-	npc.set_meta(\"collectingwater_started\", true)
-	rhythm_mode.start()
-	npc.queue_free()
-	Globals.friends += 1
-"
-
 [sub_resource type="GDScript" id="GDScript_4tm60"]
 script/source = "extends RefCounted
 
@@ -4139,15 +4129,10 @@ script/source = "extends RefCounted
 
 
 func run(npc:CharacterBody2D,player:CharacterBody2D):
-	if npc.has_meta(\"debugging_started\"):
-		return
-	var debugging_mode = npc.get_parent().get_node_or_null(\"DebuggingMode\")
-	if debugging_mode == null:
-		return
-	npc.set_meta(\"debugging_started\", true)
-	debugging_mode.start()
-	npc.queue_free() 
-	Globals.friends += 1
+	# DIALOGGGG
+	var debugging_mode = npc.get_parent().get_node(\"DebuggingMode\")
+	if debugging_mode != null:
+		debugging_mode.start(npc)
 "
 
 [sub_resource type="GDScript" id="GDScript_dgnym"]
@@ -4157,7 +4142,7 @@ func run(npc: CharacterBody2D, player: CharacterBody2D):
 	npc.get_tree().change_scene_to_file(\"res://scenes/runner/runner.tscn\")
 "
 
-[sub_resource type="GDScript" id="GDScript_1qomx"]
+[sub_resource type="GDScript" id="GDScript_yu4jn"]
 resource_local_to_scene = true
 script/source = "extends RefCounted
 # Flowery interaction script
@@ -4200,6 +4185,17 @@ func run(npc:CharacterBody2D,_player:CharacterBody2D):
 	var mode = npc.get_parent().get_node(\"Typerace\")
 	if mode:
 		mode.start(npc)
+"
+
+[sub_resource type="GDScript" id="GDScript_j4ka3"]
+script/source = "extends RefCounted
+
+
+func run(npc:CharacterBody2D,player:CharacterBody2D):
+	# DIALOGGGG
+	var river_runner = npc.get_parent().get_node(\"RiverRunner\")
+	if river_runner != null:
+		river_runner.start(npc)
 "
 
 [sub_resource type="GDScript" id="GDScript_5pec1"]
@@ -4368,8 +4364,8 @@ height = 73.026855
 
 [node name="Venue" type="Node2D" unique_id=305777334]
 y_sort_enabled = true
-position = Vector2(-1, 0)
 scale = Vector2(2, 2)
+script = ExtResource("1_yu4jn")
 
 [node name="dialog" parent="." unique_id=1600729092 instance=ExtResource("1_vkfqj")]
 
@@ -4423,11 +4419,6 @@ scale = Vector2(1, 1)
 npc_number = 26
 on_interact = SubResource("GDScript_yuhmj")
 
-[node name="Amon" parent="." unique_id=671926524 instance=ExtResource("9_a0263")]
-position = Vector2(585.5, 163)
-npc_number = 5
-on_interact = SubResource("GDScript_ad8vj")
-
 [node name="Wemmbu" parent="." unique_id=240098621 instance=ExtResource("9_a0263")]
 position = Vector2(558.5, 227)
 scale = Vector2(1, 1)
@@ -4451,12 +4442,12 @@ on_interact = SubResource("GDScript_dgnym")
 position = Vector2(603.5, 298.5)
 scale = Vector2(0.75, 0.75)
 npc_number = 18
-on_interact = SubResource("GDScript_1qomx")
+on_interact = SubResource("GDScript_yu4jn")
 frame_size = Vector2i(26, 60)
 
 [node name="Anomar" parent="." unique_id=1575755990 instance=ExtResource("9_a0263")]
 position = Vector2(402.5, 279)
-npc_number = 17
+npc_number = 16
 on_interact = SubResource("GDScript_hxsln")
 
 [node name="Chris_Caffeine" parent="." unique_id=1776127735 groups=["caffeine"] instance=ExtResource("9_a0263")]
@@ -4468,6 +4459,11 @@ on_interact = SubResource("GDScript_qhtkb")
 position = Vector2(118.5, 170)
 npc_number = 14
 on_interact = SubResource("GDScript_36q3d")
+
+[node name="VII" parent="." unique_id=1169558602 instance=ExtResource("9_a0263")]
+position = Vector2(206.5, 262.5)
+npc_number = 21
+on_interact = SubResource("GDScript_j4ka3")
 
 [node name="Steve" parent="." unique_id=778384211 instance=ExtResource("9_a0263")]
 position = Vector2(267.5, 37)
@@ -5021,13 +5017,6 @@ dialog = NodePath("../dialog")
 script = ExtResource("16_5n8o0")
 dialog = NodePath("../dialog")
 
-[node name="WaterCollecting" parent="." unique_id=1279818354 instance=ExtResource("46_1qomx")]
-visible = false
-scale = Vector2(0.5, 0.5)
-
-[node name="ShowerArea" parent="." unique_id=1211996295 instance=ExtResource("45_kusfh")]
-position = Vector2(522.5, 10.5)
-
 [node name="ChargerMode" parent="." unique_id=1209609974 instance=ExtResource("18_5pec1")]
 
 [node name="Charger" parent="ChargerMode" unique_id=1781202528 instance=ExtResource("19_bnncy")]
@@ -5037,8 +5026,9 @@ position = Vector2(488.5, 327.5)
 layer = 50
 visible = false
 
-[node name="DebuggingMode" type="Node2D" parent="." unique_id=1494169214]
+[node name="DebuggingMode" type="Node2D" parent="." unique_id=1494169214 node_paths=PackedStringArray("dialog")]
 script = ExtResource("15_hxsln")
+dialog = NodePath("../dialog")
 
 [node name="Runner" type="Node2D" parent="." unique_id=490676430]
 script = ExtResource("24_dgnym")
@@ -5051,6 +5041,10 @@ exported_scene = ExtResource("24_f3ivs")
 
 [node name="CollectWaterMode" type="Node2D" parent="." unique_id=1076949689]
 script = ExtResource("22_vwcaf")
+
+[node name="RiverRunner" type="Node2D" parent="." unique_id=779601752 node_paths=PackedStringArray("dialog")]
+script = ExtResource("33_j4ka3")
+dialog = NodePath("../dialog")
 
 [node name="TissueBoxes" type="Node2D" parent="." unique_id=670883291]
 script = ExtResource("22_bnncy")
@@ -5132,6 +5126,9 @@ dialog = NodePath("../dialog")
 position = Vector2(344.5, 156.5)
 npc_number = 17
 on_interact = ExtResource("46_1qomx")
+
+[node name="ShowerArea" parent="." unique_id=1211996295 instance=ExtResource("48_j4ka3")]
+position = Vector2(521, 11)
 
 [connection signal="timeout" from="TissueBoxes/Spawning Timer" to="TissueBoxes" method="_on_spawning_timer_timeout"]
 

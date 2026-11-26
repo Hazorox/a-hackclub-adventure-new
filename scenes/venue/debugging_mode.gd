@@ -1,18 +1,41 @@
 extends Node2D
 
-var debugging_scene : PackedScene = preload("res://scenes/minigames/debugging_mini_game.tscn")
-var layer : CanvasLayer = null
-var finished := false
+const sprite_full = "res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_15/debugging_character.png"
+const audio_path = "res://assets/audio/dialog_sound.wav"
+const npc_name = "Vii"
 
-func start() -> void:
-	if layer != null or finished:
+@export var dialog:Node
+
+const river_runner_path := "res://scenes/minigames/riverrunner/river_runner.tscn"
+var finished := false
+var npc_ref : CharacterBody2D = null
+
+func start(npc:CharacterBody2D)->void:
+	if finished:
 		return
-	layer = CanvasLayer.new()
-	layer.layer = 100
-	add_child(layer)
-	var debugging := debugging_scene.instantiate()
-	layer.add_child(debugging)
-	debugging.tree_exited.connect(func():
-		layer.queue_free()
-		layer = null
-		finished = true)
+	if dialog == null:
+		return
+	npc_ref = npc
+	dialog.queue_text("Ahhh, Hii ",sprite_full,npc_name,audio_path)
+	dialog.queue_text("This is my first time making a game",sprite_full,npc_name,audio_path)
+	dialog.queue_text("Do you wanna try it?",sprite_full,npc_name,audio_path)
+	dialog.queue_choice(["Try","Act dumb and ignore"],sprite_full,npc_name,player_chose)
+	Globals.objective.title = "Game"
+	Globals.objective.description = "Avoid Obstacles"
+
+func player_chose(choice:int)->void:
+	if choice==0:
+		game_start()
+	else:
+		pass
+
+func game_start() -> void:
+	if finished:
+		return
+	SceneManager.shower_taken.connect(_on_river_runner_done, CONNECT_ONE_SHOT)
+	SceneManager.go_to_scene(river_runner_path)
+
+func _on_river_runner_done(_returned_scene: Node) -> void:
+	finished = true
+	if npc_ref != null and is_instance_valid(npc_ref):
+		npc_ref.queue_free()

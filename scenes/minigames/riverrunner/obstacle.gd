@@ -1,5 +1,9 @@
 extends TileMapLayer
 
+var game_over_scene : PackedScene = preload("res://scenes/ui/river_runner.tscn")
+var layer : CanvasLayer = null
+var finished := false
+
 @export var speed: float = 300.0
 
 func _ready() -> void:
@@ -12,4 +16,5 @@ func _process(delta: float) -> void:
 	var overlapping_bodies = $Area2D.get_overlapping_bodies()
 	for body in overlapping_bodies:
 		if body.is_in_group("player"):
-			get_tree().change_scene_to_file("res://scenes/ui/river_runner.tscn")
+			SceneManager.return_to_cached()
+			
