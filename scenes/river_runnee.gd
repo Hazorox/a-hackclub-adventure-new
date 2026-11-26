@@ -1,6 +1,6 @@
 extends Node2D
 
-const sprite_full = "res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_15/debugging_character.png"
+const sprite_full = "res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_21/Vii.png"
 const audio_path = "res://assets/audio/dialog_sound.wav"
 const npc_name = "Vii"
 
