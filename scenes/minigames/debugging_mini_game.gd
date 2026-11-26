@@ -1,5 +1,7 @@
 extends Control
 
+signal finished(won: bool)
+
 @onready var code_edit: CodeEdit = $MarginContainer/CodeEdit
 @onready var choice_a: Button = $"Choice A"
 @onready var choice_b: Button = $"Choice B"
@@ -120,7 +122,8 @@ func _process(_delta: float) -> void:
 		layer.add_child(winning)
 		winning.tree_exited.connect(func():
 			layer.queue_free()
-			layer = null)
+			layer = null
+			finished.emit(true))
 
 func _on_choice_a_pressed() -> void:
 	if DebuggingQuestions.correct_answers == 0:
@@ -216,10 +219,17 @@ func game_over() -> void:
 	gameover_layer.add_child(gameover)
 	if gameover is Control:
 		gameover.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	gameover.tree_exited.connect(func():
+		gameover_layer.queue_free()
+		gameover_layer = null
+		finished.emit(false))
 
 func restart() -> void:
 	DebuggingQuestions.correct_answers = 0
 	code_edit.text = text_0
 	choice_a.text = "move_and_slide()"
 	choice_b.text = "move_and_collide(velocity)"
-	choice_c.text
+	choice_c.text = "set_velocity(direction)"
+	choice_a.disabled = false
+	choice_b.disabled = false
+	choice_c.disabled = false

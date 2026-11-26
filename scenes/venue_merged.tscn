@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bvyrk6dhmtau7" path="res://assets/free-office-pixel-art/beanbags/beanbag3.png" id="31_iiwx3"]
 [ext_resource type="Texture2D" uid="uid://dwsjxex43n7eq" path="res://assets/free-office-pixel-art/beanbags/beanbag4.png" id="32_gsias"]
 [ext_resource type="Texture2D" uid="uid://cxxutc6iu1auk" path="res://assets/free-office-pixel-art/beanbags/beanbag5.png" id="33_6o1fr"]
+[ext_resource type="Script" uid="uid://dwhaoixf0gk1j" path="res://scenes/river_runnee.gd" id="33_j4ka3"]
 [ext_resource type="Texture2D" uid="uid://qxk3jtxkgql4" path="res://assets/free-office-pixel-art/beanbags/beanbag6.png" id="34_dh5br"]
 [ext_resource type="Texture2D" uid="uid://c5va7csvlesmj" path="res://assets/free-office-pixel-art/beanbags/beanbag7.png" id="35_vjksx"]
 [ext_resource type="Texture2D" uid="uid://cuv4m5tedpr7a" path="res://assets/free-office-pixel-art/beanbags/beanbag8.png" id="36_kusfh"]
@@ -4128,15 +4129,10 @@ script/source = "extends RefCounted
 
 
 func run(npc:CharacterBody2D,player:CharacterBody2D):
-	if npc.has_meta(\"debugging_started\"):
-		return
-	var debugging_mode = npc.get_parent().get_node_or_null(\"DebuggingMode\")
-	if debugging_mode == null:
-		return
-	npc.set_meta(\"debugging_started\", true)
-	debugging_mode.start()
-	npc.queue_free() 
-	Globals.friends += 1
+	# DIALOGGGG
+	var debugging_mode = npc.get_parent().get_node(\"DebuggingMode\")
+	if debugging_mode != null:
+		debugging_mode.start(npc)
 "
 
 [sub_resource type="GDScript" id="GDScript_dgnym"]
@@ -4146,7 +4142,7 @@ func run(npc: CharacterBody2D, player: CharacterBody2D):
 	npc.get_tree().change_scene_to_file(\"res://scenes/runner/runner.tscn\")
 "
 
-[sub_resource type="GDScript" id="GDScript_a74ls"]
+[sub_resource type="GDScript" id="GDScript_yu4jn"]
 resource_local_to_scene = true
 script/source = "extends RefCounted
 # Flowery interaction script
@@ -4189,6 +4185,17 @@ func run(npc:CharacterBody2D,_player:CharacterBody2D):
 	var mode = npc.get_parent().get_node(\"Typerace\")
 	if mode:
 		mode.start(npc)
+"
+
+[sub_resource type="GDScript" id="GDScript_j4ka3"]
+script/source = "extends RefCounted
+
+
+func run(npc:CharacterBody2D,player:CharacterBody2D):
+	# DIALOGGGG
+	var river_runner = npc.get_parent().get_node(\"RiverRunner\")
+	if river_runner != null:
+		river_runner.start(npc)
 "
 
 [sub_resource type="GDScript" id="GDScript_5pec1"]
@@ -4435,12 +4442,12 @@ on_interact = SubResource("GDScript_dgnym")
 position = Vector2(603.5, 298.5)
 scale = Vector2(0.75, 0.75)
 npc_number = 18
-on_interact = SubResource("GDScript_a74ls")
+on_interact = SubResource("GDScript_yu4jn")
 frame_size = Vector2i(26, 60)
 
 [node name="Anomar" parent="." unique_id=1575755990 instance=ExtResource("9_a0263")]
 position = Vector2(402.5, 279)
-npc_number = 17
+npc_number = 16
 on_interact = SubResource("GDScript_hxsln")
 
 [node name="Chris_Caffeine" parent="." unique_id=1776127735 groups=["caffeine"] instance=ExtResource("9_a0263")]
@@ -4452,6 +4459,11 @@ on_interact = SubResource("GDScript_qhtkb")
 position = Vector2(118.5, 170)
 npc_number = 14
 on_interact = SubResource("GDScript_36q3d")
+
+[node name="VII" parent="." unique_id=1169558602 instance=ExtResource("9_a0263")]
+position = Vector2(206.5, 262.5)
+npc_number = 21
+on_interact = SubResource("GDScript_j4ka3")
 
 [node name="Steve" parent="." unique_id=778384211 instance=ExtResource("9_a0263")]
 position = Vector2(267.5, 37)
@@ -5014,8 +5026,9 @@ position = Vector2(488.5, 327.5)
 layer = 50
 visible = false
 
-[node name="DebuggingMode" type="Node2D" parent="." unique_id=1494169214]
+[node name="DebuggingMode" type="Node2D" parent="." unique_id=1494169214 node_paths=PackedStringArray("dialog")]
 script = ExtResource("15_hxsln")
+dialog = NodePath("../dialog")
 
 [node name="Runner" type="Node2D" parent="." unique_id=490676430]
 script = ExtResource("24_dgnym")
@@ -5028,6 +5041,10 @@ exported_scene = ExtResource("24_f3ivs")
 
 [node name="CollectWaterMode" type="Node2D" parent="." unique_id=1076949689]
 script = ExtResource("22_vwcaf")
+
+[node name="RiverRunner" type="Node2D" parent="." unique_id=779601752 node_paths=PackedStringArray("dialog")]
+script = ExtResource("33_j4ka3")
+dialog = NodePath("../dialog")
 
 [node name="TissueBoxes" type="Node2D" parent="." unique_id=670883291]
 script = ExtResource("22_bnncy")

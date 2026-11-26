@@ -136,9 +136,11 @@ func render_choices():
 func confirm_choice():
 	end.text = "v"
 	change_state(STATE.DONE)
+	var tree := get_tree()
 	if callback.is_valid():
 		callback.call(index)
-	get_tree().paused=false
+	if tree:
+		tree.paused=false
 	return index
 	
 func _on_tween_finished():

@@ -5,4 +5,4 @@ extends CanvasLayer
 
 
 func _on_exit_button_pressed() -> void:
-	queue_free()
+	get_tree().current_scene.queue_free()
